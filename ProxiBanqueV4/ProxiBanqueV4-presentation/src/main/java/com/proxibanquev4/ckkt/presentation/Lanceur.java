@@ -23,7 +23,6 @@ public class Lanceur {
 		System.out.println(gerant.getPrenom());
 		System.out.println(gerant.getLogin());
 		System.out.println(gerant.getPassword());
-		System.out.println(gerant.getRole());
 	}
 
 }
