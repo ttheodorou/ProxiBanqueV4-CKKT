@@ -1,5 +1,6 @@
 package com.proxibanquev4.ckkt.domaine;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -8,6 +9,7 @@ import javax.persistence.Id;
  * Classe Adresse.java Represente les Adresses des Clients de la banque Proxibanque
  * @author CKKT
  */
+@Entity
 public class Adresse {
 	
 	@Id

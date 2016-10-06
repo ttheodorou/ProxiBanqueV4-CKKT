@@ -1,16 +1,42 @@
 package com.proxibanquev4.ckkt.domaine;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
+
 /**
  * Classe User.java Represente
  * @author CKKT
  */
+@Entity
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public abstract class User extends Personne{
 
 	private String login;
 	private String password;
 	
+	@OneToMany(mappedBy = "conseiller")
+	private List<Client> clients;
 	
 	// Constructeur de la classe User
+
+	/**
+	 * Constructeur de la classe User.java
+	 * @param nom
+	 * @param prenom
+	 * @param login
+	 * @param password
+	 * @param clients
+	 */
+	public User(String nom, String prenom, String login, String password, List<Client> clients) {
+		super(nom, prenom);
+		this.login = login;
+		this.password = password;
+		this.clients = clients;
+	}
 
 	/**
 	 * Constructeur de la classe User.java

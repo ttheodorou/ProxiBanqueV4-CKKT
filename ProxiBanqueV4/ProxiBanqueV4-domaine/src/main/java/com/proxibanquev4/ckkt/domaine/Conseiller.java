@@ -1,14 +1,33 @@
 package com.proxibanquev4.ckkt.domaine;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+
 /**
  * Classe Conseiller.java Represente
  * @author CKKT
  */
+@Entity
 public class Conseiller extends User {
 
 	private final String role = "conseiller";
 
+	
 	// Constructeur de la classe Conseiller
+	
+	/**
+	 * Constructeur de la classe Conseiller.java
+	 * @param nom
+	 * @param prenom
+	 * @param login
+	 * @param password
+	 * @param clients
+	 */
+	public Conseiller(String nom, String prenom, String login, String password, List<Client> clients) {
+		super(nom, prenom, login, password, clients);
+		// TODO Auto-generated constructor stub
+	}
 	
 	/**
 	 * Constructeur de la classe Conseiller.java
@@ -40,7 +59,6 @@ public class Conseiller extends User {
 		super(nom);
 		// TODO Auto-generated constructor stub
 	}
-
 	
 	/**
 	 * Constructeur de la classe Conseiller.java

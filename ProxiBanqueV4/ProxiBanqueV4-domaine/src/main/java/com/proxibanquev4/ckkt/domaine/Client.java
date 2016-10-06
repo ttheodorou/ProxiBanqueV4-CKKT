@@ -3,6 +3,7 @@ package com.proxibanquev4.ckkt.domaine;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -12,6 +13,7 @@ import javax.persistence.OneToOne;
  * Classe Client.java hérite de Personne et Represente les Clients de la banque ProxiBanque
  * @author CKKT
  */
+@Entity
 public class Client extends Personne {
 
 	@OneToOne(fetch=FetchType.EAGER,cascade=CascadeType.ALL)
@@ -25,7 +27,6 @@ public class Client extends Personne {
 	
 	@OneToMany(mappedBy="proprietaire", fetch=FetchType.EAGER)
 	private List<CompteBancaire> comptes;
-
 
 	// Constructeur de la classe Client
 
@@ -70,7 +71,6 @@ public class Client extends Personne {
 		this.comptes = comptes;
 	}
 	
-
 	/**
 	 * Constructeur de la classe Client.java
 	 * @param nom
@@ -88,7 +88,6 @@ public class Client extends Personne {
 		this.conseiller = conseiller;
 		this.comptes = comptes;
 	}
-	
 
 	/**
 	 * Constructeur de la classe Client.java
@@ -105,7 +104,6 @@ public class Client extends Personne {
 		this.comptes = comptes;
 	}
 	
-
 	/**
 	 * Constructeur de la classe Client.java
 	 * @param nom
@@ -119,7 +117,6 @@ public class Client extends Personne {
 		this.comptes = comptes;
 	}
 	
-
 	/**
 	 * Constructeur de la classe Client.java
 	 * @param nom
@@ -132,7 +129,6 @@ public class Client extends Personne {
 		this.conseiller = conseiller;
 	}
 	
-
 	/**
 	 * Constructeur de la classe Client.java
 	 * @param nom
@@ -142,7 +138,6 @@ public class Client extends Personne {
 		super(nom, prenom);
 		// TODO Auto-generated constructor stub
 	}
-
 
 	/**
 	 * Constructeur de la classe Client.java
@@ -212,7 +207,6 @@ public class Client extends Personne {
 		this.mail = mail;
 	}
 
-	
 	/**
 	 * Méthode permettant d'obtenir le paramètre : conseiller
 	 * @return conseiller
@@ -221,7 +215,6 @@ public class Client extends Personne {
 		return conseiller;
 	}
 	
-
 	/**
 	 * Méthode permettant de modifier le paramètre : conseiller
 	 * @param conseiller le paramètre conseiller à modifier
@@ -230,7 +223,6 @@ public class Client extends Personne {
 		this.conseiller = conseiller;
 	}
 	
-
 	/**
 	 * Méthode permettant d'obtenir le paramètre : comptes
 	 * @return comptes
@@ -239,7 +231,6 @@ public class Client extends Personne {
 		return comptes;
 	}
 	
-
 	/**
 	 * Méthode permettant de modifier le paramètre : comptes
 	 * @param comptes le paramètre comptes à modifier
@@ -248,6 +239,5 @@ public class Client extends Personne {
 		this.comptes = comptes;
 	}
 
-	
 }
 

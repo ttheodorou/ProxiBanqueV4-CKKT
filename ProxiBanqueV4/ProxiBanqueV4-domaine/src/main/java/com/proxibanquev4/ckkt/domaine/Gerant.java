@@ -1,15 +1,34 @@
 package com.proxibanquev4.ckkt.domaine;
 
+import java.util.List;
+
+import javax.persistence.Entity;
+
 /**
  * Classe Gerant.java Represente
  * @author CKKT
  */
+@Entity
 public class Gerant extends User {
 
 	private final String role = "gerant";
 
+	
 	// Constructeur de la classe Gerant
 
+	/**
+	 * Constructeur de la classe Gerant.java
+	 * @param nom
+	 * @param prenom
+	 * @param login
+	 * @param password
+	 * @param clients
+	 */
+	public Gerant(String nom, String prenom, String login, String password, List<Client> clients) {
+		super(nom, prenom, login, password, clients);
+		// TODO Auto-generated constructor stub
+	}
+	
 	/**
 	 * Constructeur de la classe Gerant.java
 	 * @param nom
@@ -21,7 +40,6 @@ public class Gerant extends User {
 		super(nom, prenom, login, password);
 		// TODO Auto-generated constructor stub
 	}
-	
 
 	/**
 	 * Constructeur de la classe Gerant.java
