@@ -11,7 +11,7 @@ public class ConseillerService {
 		
 	}
 	
-	public Conseiller lireConseiller(int conseillerId) {
+	public Conseiller lireConseiller(long conseillerId) {
 		return null;
 	}
 	
@@ -23,11 +23,11 @@ public class ConseillerService {
 		return new ArrayList<Conseiller>();
 	}
 	
-	public void modifierConseiller(int conseillerId, Conseiller conseillerModifie) {
+	public void modifierConseiller(long conseillerId, Conseiller conseillerModifie) {
 		
 	}
 	
-	public void supprimerConseiller(int conseillerId) {
+	public void supprimerConseiller(long conseillerId) {
 		
 	}
 

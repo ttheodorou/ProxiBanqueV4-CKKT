@@ -11,19 +11,19 @@ public class ClientService {
 		
 	}
 	
-	public Client lireClient(int clientId) {
+	public Client lireClient(long clientId) {
 		return null;
 	}
 	
-	public List<Client> lireTousClients(int idConseiller) {
+	public List<Client> lireTousClients(long idConseiller) {
 		return new ArrayList<Client>();
 	}
 	
-	public void modifierClient(int clientId, Client clientModifie) {
+	public void modifierClient(long clientId, Client clientModifie) {
 		
 	}
 	
-	public void supprimerClient(int clientId) {
+	public void supprimerClient(long clientId) {
 		
 	}
 
