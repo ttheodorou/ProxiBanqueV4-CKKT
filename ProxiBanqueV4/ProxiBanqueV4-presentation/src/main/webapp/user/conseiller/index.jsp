@@ -20,6 +20,7 @@ if (request.isUserInRole("gerant"))
 %>
 <span>Bonjour <%= username %>. Vous êtes connecté en tant que <%= role %>. </span>
 <br />
+<a href="user/gerant/index2.jsp">gerant</a>
 <a href="logout.jsp">Logout</a>
 </body>
 </html>
