@@ -2,6 +2,8 @@ package com.proxibanquev4.ckkt.domaine;
 
 import java.util.List;
 
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
@@ -12,7 +14,9 @@ import javax.persistence.OneToMany;
  * @author CKKT
  */
 @Entity
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "role")
+@DiscriminatorValue("user")
 public abstract class User extends Personne{
 
 	private String login;

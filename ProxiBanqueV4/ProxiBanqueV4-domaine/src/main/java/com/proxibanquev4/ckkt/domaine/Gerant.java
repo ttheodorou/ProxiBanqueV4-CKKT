@@ -2,6 +2,7 @@ package com.proxibanquev4.ckkt.domaine;
 
 import java.util.List;
 
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 /**
@@ -9,10 +10,8 @@ import javax.persistence.Entity;
  * @author CKKT
  */
 @Entity
+@DiscriminatorValue("gerant")
 public class Gerant extends User {
-
-	private final String role = "gerant";
-
 	
 	// Constructeur de la classe Gerant
 
@@ -66,17 +65,6 @@ public class Gerant extends User {
 	public Gerant() {
 		super();
 		// TODO Auto-generated constructor stub
-	}
-	
-	
-	// Getter et Setter de la classe Gerant
-	
-	/**
-	 * Méthode permettant d'obtenir le paramètre : role
-	 * @return role
-	 */
-	public String getRole() {
-		return role;
 	}
 	
 }
