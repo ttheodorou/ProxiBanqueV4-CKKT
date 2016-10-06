@@ -22,10 +22,14 @@ public abstract class Personne {
 	private String nom;
 	private String prenom;
 	
+	
 	// Constructeur de la classe Personne
 	
 	/**
-	 * Constructeur de la classe Personne.java.
+	 * Constructeur de la classe Personne.java
+	 * @param idPersonne
+	 * @param nom
+	 * @param prenom
 	 */
 	public Personne(long idPersonne, String nom, String prenom) {
 		super();
@@ -34,9 +38,10 @@ public abstract class Personne {
 		this.prenom = prenom;
 	}
 
-
 	/**
-	 * Constructeur de la classe Personne.java.
+	 * Constructeur de la classe Personne.java
+	 * @param nom
+	 * @param prenom
 	 */
 	public Personne(String nom, String prenom) {
 		super();
@@ -44,18 +49,17 @@ public abstract class Personne {
 		this.prenom = prenom;
 	}
 
-
 	/**
-	 * Constructeur de la classe Personne.java.
+	 * Constructeur de la classe Personne.java
+	 * @param nom
 	 */
 	public Personne(String nom) {
 		super();
 		this.nom = nom;
 	}
 
-
 	/**
-	 * Constructeur de la classe Personne.java.
+	 * Constructeur de la classe Personne.java
 	 */
 	public Personne() {
 		super();
@@ -72,7 +76,6 @@ public abstract class Personne {
 		return idPersonne;
 	}
 
-
 	/**
 	 * Méthode permettant de modifier l'ID de la personne
 	 * @param idPersonne
@@ -80,7 +83,6 @@ public abstract class Personne {
 	public void setIdPersonne(long idPersonne) {
 		this.idPersonne = idPersonne;
 	}
-
 
 	/**
 	 * Méthode permettant d'obtenir le Nom de la personne
@@ -90,7 +92,6 @@ public abstract class Personne {
 		return nom;
 	}
 
-
 	/**
 	 * Méthode permettant de modifier le Nom de la personne
 	 * @param nom
@@ -98,7 +99,6 @@ public abstract class Personne {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
 
 	/**
 	 * Méthode permettant d'obtenir le Prenom de la personne
@@ -108,7 +108,6 @@ public abstract class Personne {
 		return prenom;
 	}
 
-
 	/**
 	 * Méthode permettant de modifier le Prenom de la personne.
 	 * @param prenom
@@ -116,8 +115,5 @@ public abstract class Personne {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	
-	
-	
 	
 }
