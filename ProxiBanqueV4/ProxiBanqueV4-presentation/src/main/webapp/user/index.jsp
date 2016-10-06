@@ -12,7 +12,14 @@
 <body>
 <%
 String username = request.getRemoteUser();
+String role = "";
+if (request.isUserInRole("conseiller"))
+	role = "conseiller";
+if (request.isUserInRole("gerant"))
+	role = "gérant";
 %>
-<span>Hello <%= username %>. This is a secure resource</span>
+<span>Bonjour <%= username %>. Vous êtes connecté en tant que <%= role %>. </span>
+<br />
+<a href="${pageContext.request.contextPath}/logout">Logout</a>
 </body>
 </html>
