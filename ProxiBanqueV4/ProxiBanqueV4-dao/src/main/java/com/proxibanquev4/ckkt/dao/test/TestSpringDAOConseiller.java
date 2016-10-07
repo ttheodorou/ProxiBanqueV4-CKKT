@@ -5,7 +5,7 @@ package com.proxibanquev4.ckkt.dao.test;
 
 import java.util.List;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.proxibanquev4.ckkt.dao.IConseillerDao;
 import com.proxibanquev4.ckkt.domaine.Conseiller;
@@ -20,7 +20,7 @@ public class TestSpringDAOConseiller extends TestCase {
 
 	private Conseiller conseiller;
 	private IConseillerDao springDaoConseiller;
-	private ClassPathXmlApplicationContext appContext;
+	private AnnotationConfigApplicationContext appContext;
 	
 	/* (non-Javadoc)
 	 * @see junit.framework.TestCase#setUp()
@@ -28,7 +28,7 @@ public class TestSpringDAOConseiller extends TestCase {
 	protected void setUp() throws Exception {
 		super.setUp();
 		conseiller = new Conseiller("Theodorou", "Thomas", "Theo", "toto");
-		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
+		appContext = new AnnotationConfigApplicationContext("spring-data.xml");
 
 		springDaoConseiller = (IConseillerDao) appContext.getBean("IClientDao");
 	}

@@ -10,11 +10,11 @@
         http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 		http://www.springframework.org/schema/data/repository
         http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd"
-		default-autowire="byName">
+		default-autowire="byType">
 
-	<!-- Etape 0 : Configuration Annotations -->
+<!-- Etape 0 : Configuration Annotations -->
 
-	<context:annotation-config />
+<context:annotation-config/>
 
 	<!-- Etape 1 : Base de donnees = PPC + dataSource-->
 	<bean
@@ -39,13 +39,7 @@
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="com.objis.spring.domaine" />
-		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-				<property name="database" value="MYSQL" />
-				<property name="generateDdl" value="true" />
-			</bean>
-		</property>
+		<property name="persistenceUnitName" value="myUnit"/>
 	</bean>
 
 		<!-- Etape 3 : TransactionManager -->

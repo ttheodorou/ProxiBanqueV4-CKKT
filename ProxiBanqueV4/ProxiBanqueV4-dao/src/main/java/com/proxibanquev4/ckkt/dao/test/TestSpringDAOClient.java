@@ -1,6 +1,6 @@
 package com.proxibanquev4.ckkt.dao.test;
 
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.proxibanquev4.ckkt.dao.IClientDao;
 import com.proxibanquev4.ckkt.domaine.Client;
@@ -15,7 +15,7 @@ public class TestSpringDAOClient extends TestCase {
 
 	private Client client;
 	private IClientDao springDaoClient;
-	private ClassPathXmlApplicationContext appContext;
+	private AnnotationConfigApplicationContext appContext;
 	
 	/* (non-Javadoc)
 	 * @see junit.framework.TestCase#setUp()
@@ -23,7 +23,7 @@ public class TestSpringDAOClient extends TestCase {
 	protected void setUp() throws Exception {
 		super.setUp();
 		client = new Client("Castro", "Clement");
-		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
+		appContext = new AnnotationConfigApplicationContext("spring-data.xml");
 
 		springDaoClient = (IClientDao) appContext.getBean("IClientDao");
 	}
