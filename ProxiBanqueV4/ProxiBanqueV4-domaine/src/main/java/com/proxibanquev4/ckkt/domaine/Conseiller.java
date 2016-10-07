@@ -54,8 +54,8 @@ public class Conseiller extends User {
 	 * Constructeur de la classe Conseiller.java
 	 * @param nom
 	 */
-	public Conseiller(String nom) {
-		super(nom);
+	public Conseiller(String login) {
+		super(login);
 		// TODO Auto-generated constructor stub
 	}
 	

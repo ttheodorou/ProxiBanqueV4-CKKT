@@ -69,8 +69,8 @@ public abstract class User extends Personne{
 	 * Constructeur de la classe User.java
 	 * @param nom
 	 */
-	public User(String nom) {
-		super(nom);
+	public User(String login) {
+		super(login);
 		// TODO Auto-generated constructor stub
 	}
 	

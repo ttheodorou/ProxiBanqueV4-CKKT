@@ -54,8 +54,8 @@ public class Gerant extends User {
 	 * Constructeur de la classe Gerant.java
 	 * @param nom
 	 */
-	public Gerant(String nom) {
-		super(nom);
+	public Gerant(String login) {
+		super(login);
 		// TODO Auto-generated constructor stub
 	}
 
