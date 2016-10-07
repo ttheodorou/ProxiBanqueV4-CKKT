@@ -34,11 +34,11 @@ public class ConseillerService {
 	}
 	
 	public void modifierConseiller(Conseiller conseillerModifie) {
-				
+		dao.save(conseillerModifie);				
 	}
 	
-	public void supprimerConseiller(Conseiller conseiller) {
-		dao.delete(conseiller);		
+	public void supprimerConseiller(Conseiller conseillerASupprimer) {
+		dao.delete(conseillerASupprimer);		
 	}
 
 }

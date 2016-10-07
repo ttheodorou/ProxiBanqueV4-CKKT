@@ -1,41 +1,41 @@
 package com.proxibanquev4.ckkt.service;
 
+import javax.inject.Inject;
+
+import com.proxibanquev4.ckkt.dao.ICompteBancaireDao;
 import com.proxibanquev4.ckkt.domaine.CompteBancaire;
 
 public class CompteService {
 	
-//	@Inject
-//	ICompteDAO compteDAO;
-//	
+	@Inject
+	ICompteBancaireDao dao;
+	
 	public void creerCompte(CompteBancaire compteACreer) {
-		
+		dao.save(compteACreer);
 	}
 	
 	public CompteBancaire lireCompteParId(long idCompte) {
-		return null;
+		return dao.findOne(idCompte);
 	}
 	
-	public void modifierCompte(CompteBancaire nouveauCompte) {
-		
+	public void modifierCompte(CompteBancaire compteModifie) {
+		dao.save(compteModifie);		
 	}
 	
-	public void supprimerCompte(CompteBancaire compteACreer) {
-		
+	public void supprimerCompte(CompteBancaire compteASupprimer) {
+		dao.delete(compteASupprimer);
 	}
 	
-	public boolean virement(CompteBancaire compteADebiter, CompteBancaire compteACrediter, double montant) {
+	public void virement(CompteBancaire compteADebiter, CompteBancaire compteACrediter, double montant) {
 		debiter(compteADebiter, montant);
 		crediter(compteACrediter, montant);
-		return true;
 	}
 	
-	public boolean crediter (CompteBancaire compteACrediter, double montant) {
-//		CompteBancaire compte = lireCompte(noCompteACrediter);
-//		updateSolde(noCompteACrediter, compte.getSolde() - montant);
-		return false;
+	public void crediter (CompteBancaire compteACrediter, double montant) {
+		compteACrediter.setSolde(compteACrediter.getSolde() + montant);
 	}
 
-	public boolean debiter (CompteBancaire compteADebiter, double montant) {
-		return false;
+	public void debiter (CompteBancaire compteADebiter, double montant) {
+		compteADebiter.setSolde(compteADebiter.getSolde() + montant);
 	}
 }
