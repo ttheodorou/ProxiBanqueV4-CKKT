@@ -16,14 +16,15 @@
 
   <dependencies>
   
+	<!-- Junit -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+	  <groupId>junit</groupId>
+	  <artifactId>junit</artifactId>
+	  <version>4.12</version>
+	  <scope>test</scope>
+	</dependency>
     
-    <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
+    <!-- Hibernate, https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
 	<dependency>
 	    <groupId>org.hibernate</groupId>
 	    <artifactId>hibernate-core</artifactId>
@@ -32,10 +33,12 @@
     
   </dependencies>
   
+  <!-- Modules du projet -->
   <modules>
     <module>ProxiBanqueV4-service</module>
     <module>ProxiBanqueV4-domaine</module>
     <module>ProxiBanqueV4-dao</module>
     <module>ProxiBanqueV4-presentation</module>
   </modules>
+  
 </project>
