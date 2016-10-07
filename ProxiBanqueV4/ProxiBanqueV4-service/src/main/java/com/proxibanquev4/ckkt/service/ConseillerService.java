@@ -1,6 +1,5 @@
 package com.proxibanquev4.ckkt.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -14,27 +13,32 @@ public class ConseillerService {
 	IConseillerDao dao;
 	
 	public void creerConseiller(Conseiller conseiller) {
-		
+		dao.save(conseiller);
 	}
 	
 	public Conseiller lireConseiller(long conseillerId) {
-		return null;
+		return dao.findOne(conseillerId);
 	}
 	
 	public Conseiller lireConseillerParLogin(String login) {
-		return null;
+		List<Conseiller> listeConseiller = dao.findByLogin(login);
+		if (listeConseiller.isEmpty()) {
+			return null;
+		} else {
+			return listeConseiller.get(0);
+		}
 	}
 	
 	public List<Conseiller> lireTousConseillers() {
-		return new ArrayList<Conseiller>();
+		return dao.findAll();
 	}
 	
-	public void modifierConseiller(long conseillerId, Conseiller conseillerModifie) {
-		
+	public void modifierConseiller(Conseiller conseillerModifie) {
+				
 	}
 	
-	public void supprimerConseiller(long conseillerId) {
-		
+	public void supprimerConseiller(Conseiller conseiller) {
+		dao.delete(conseiller);		
 	}
 
 }

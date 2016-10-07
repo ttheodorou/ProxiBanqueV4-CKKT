@@ -5,20 +5,20 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import com.proxibanquev4.ckkt.dao.IConseillerDao;
+import com.proxibanquev4.ckkt.dao.IClientDao;
 import com.proxibanquev4.ckkt.domaine.Client;
 
 public class ClientService {
 	
 	@Inject
-	IConseillerDao dao;
+	IClientDao dao;
 	
 	public void creerClient(Client client) {
-		
+		dao.save(client);		
 	}
 	
 	public Client lireClient(long clientId) {
-		return null;
+		return dao.findOne(clientId);
 	}
 	
 	public List<Client> lireTousClients(long idConseiller) {

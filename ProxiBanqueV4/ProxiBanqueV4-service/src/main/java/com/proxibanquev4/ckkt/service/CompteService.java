@@ -1,7 +1,5 @@
 package com.proxibanquev4.ckkt.service;
 
-import javax.inject.Inject;
-
 import com.proxibanquev4.ckkt.domaine.CompteBancaire;
 
 public class CompteService {
@@ -10,6 +8,14 @@ public class CompteService {
 //	ICompteDAO compteDAO;
 //	
 	public void creerCompte(CompteBancaire compteACreer) {
+		
+	}
+	
+	public CompteBancaire lireCompteParId(long idCompte) {
+		return null;
+	}
+	
+	public void modifierCompte(CompteBancaire nouveauCompte) {
 		
 	}
 	
