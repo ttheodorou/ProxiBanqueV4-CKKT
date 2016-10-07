@@ -6,12 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
- * Classe Adresse.java Represente les Adresses des Clients de la banque Proxibanque
+ * Classe Adresse.java Represente les Adresses des Clients de la banque
+ * Proxibanque
+ * 
  * @author CKKT
  */
 @Entity
 public class Adresse {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long idAdresse;
@@ -19,12 +21,12 @@ public class Adresse {
 	private String nomRue;
 	private int codePostal;
 	private String ville;
-	
-	
+
 	// Constructeur de la classe Adresse
-	
+
 	/**
 	 * Constructeur de la classe Adresse.java
+	 * 
 	 * @param idAdresse
 	 * @param numRue
 	 * @param nomRue
@@ -42,6 +44,7 @@ public class Adresse {
 
 	/**
 	 * Constructeur de la classe Adresse.java
+	 * 
 	 * @param numRue
 	 * @param nomRue
 	 * @param codePostal
@@ -55,11 +58,11 @@ public class Adresse {
 		this.ville = ville;
 	}
 
-
 	// Getter et Setter de la classe Adresse
 
 	/**
 	 * Méthode permettant d'obtenir le paramètre : idAdresse
+	 * 
 	 * @return idAdresse
 	 */
 	public long getIdAdresse() {
@@ -68,7 +71,9 @@ public class Adresse {
 
 	/**
 	 * Méthode permettant de modifier le paramètre : idAdresse
-	 * @param idAdresse le paramètre idAdresse à modifier
+	 * 
+	 * @param idAdresse
+	 *            le paramètre idAdresse à modifier
 	 */
 	public void setIdAdresse(long idAdresse) {
 		this.idAdresse = idAdresse;
@@ -76,6 +81,7 @@ public class Adresse {
 
 	/**
 	 * Méthode permettant d'obtenir le paramètre : numRue
+	 * 
 	 * @return numRue
 	 */
 	public String getNumRue() {
@@ -84,7 +90,9 @@ public class Adresse {
 
 	/**
 	 * Méthode permettant de modifier le paramètre : numRue
-	 * @param numRue le paramètre numRue à modifier
+	 * 
+	 * @param numRue
+	 *            le paramètre numRue à modifier
 	 */
 	public void setNumRue(String numRue) {
 		this.numRue = numRue;
@@ -92,6 +100,7 @@ public class Adresse {
 
 	/**
 	 * Méthode permettant d'obtenir le paramètre : nomRue
+	 * 
 	 * @return nomRue
 	 */
 	public String getNomRue() {
@@ -100,7 +109,9 @@ public class Adresse {
 
 	/**
 	 * Méthode permettant de modifier le paramètre : nomRue
-	 * @param nomRue le paramètre nomRue à modifier
+	 * 
+	 * @param nomRue
+	 *            le paramètre nomRue à modifier
 	 */
 	public void setNomRue(String nomRue) {
 		this.nomRue = nomRue;
@@ -108,6 +119,7 @@ public class Adresse {
 
 	/**
 	 * Méthode permettant d'obtenir le paramètre : codePostal
+	 * 
 	 * @return codePostal
 	 */
 	public int getCodePostal() {
@@ -116,7 +128,9 @@ public class Adresse {
 
 	/**
 	 * Méthode permettant de modifier le paramètre : codePostal
-	 * @param codePostal le paramètre codePostal à modifier
+	 * 
+	 * @param codePostal
+	 *            le paramètre codePostal à modifier
 	 */
 	public void setCodePostal(int codePostal) {
 		this.codePostal = codePostal;
@@ -124,6 +138,7 @@ public class Adresse {
 
 	/**
 	 * Méthode permettant d'obtenir le paramètre : ville
+	 * 
 	 * @return ville
 	 */
 	public String getVille() {
@@ -132,10 +147,17 @@ public class Adresse {
 
 	/**
 	 * Méthode permettant de modifier le paramètre : ville
-	 * @param ville le paramètre ville à modifier
+	 * 
+	 * @param ville
+	 *            le paramètre ville à modifier
 	 */
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-	
+
+	@Override
+	public String toString() {
+		return numRue + " " + nomRue + ", " + codePostal + " " + ville;
+	}
+
 }
