@@ -33,9 +33,11 @@ public class CompteService {
 	
 	public void crediter (CompteBancaire compteACrediter, double montant) {
 		compteACrediter.setSolde(compteACrediter.getSolde() + montant);
+		dao.save(compteACrediter);
 	}
 
 	public void debiter (CompteBancaire compteADebiter, double montant) {
 		compteADebiter.setSolde(compteADebiter.getSolde() + montant);
+		dao.save(compteADebiter);
 	}
 }
