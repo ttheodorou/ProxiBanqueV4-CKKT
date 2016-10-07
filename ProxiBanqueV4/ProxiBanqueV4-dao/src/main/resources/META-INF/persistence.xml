@@ -11,9 +11,10 @@
 		<class>com.proxibanquev4.ckkt.domaine.CompteEpargne</class>
 		<class>com.proxibanquev4.ckkt.domaine.Conseiller</class>
 		<class>com.proxibanquev4.ckkt.domaine.Personne</class>
-		<class>com.proxibanquev4.ckkt.domaine.Users</class>
+		<class>com.proxibanquev4.ckkt.domaine.User</class>
 		<class>com.proxibanquev4.ckkt.domaine.Gerant</class>
-
+	<class>com.proxibanquev4.ckkt.domaine.Transaction</class>
+	
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 
 		<properties>

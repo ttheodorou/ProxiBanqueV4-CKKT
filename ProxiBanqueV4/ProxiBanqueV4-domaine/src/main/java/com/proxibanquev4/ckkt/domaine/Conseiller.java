@@ -10,7 +10,7 @@ import javax.persistence.Entity;
  * @author CKKT
  */
 @Entity
-@DiscriminatorValue("conseiller")
+@DiscriminatorValue("CONSEILLER")
 public class Conseiller extends User {
 
 	// Constructeur de la classe Conseiller

@@ -1,7 +1,5 @@
 package com.proxibanquev4.ckkt.dao;
 
-import java.util.List;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -14,5 +12,5 @@ import com.proxibanquev4.ckkt.domaine.Conseiller;
 @Repository
 public interface IConseillerDao extends JpaRepository<Conseiller, Long> {
 
-	public List<Conseiller> findByLogin(String login);
+	public Conseiller findByLogin(String login);
 }

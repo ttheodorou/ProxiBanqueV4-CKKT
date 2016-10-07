@@ -3,9 +3,9 @@
  */
 package com.proxibanquev4.ckkt.dao.test;
 
-import java.util.List;
+import org.junit.Test;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.proxibanquev4.ckkt.dao.IConseillerDao;
 import com.proxibanquev4.ckkt.domaine.Conseiller;
@@ -20,17 +20,14 @@ public class TestSpringDAOConseiller extends TestCase {
 
 	private Conseiller conseiller;
 	private IConseillerDao springDaoConseiller;
-	private AnnotationConfigApplicationContext appContext;
+	private ClassPathXmlApplicationContext appContext;
 	
 	/* (non-Javadoc)
 	 * @see junit.framework.TestCase#setUp()
 	 */
 	protected void setUp() throws Exception {
 		super.setUp();
-		conseiller = new Conseiller("Theodorou", "Thomas", "Theo", "toto");
-		appContext = new AnnotationConfigApplicationContext("spring-data.xml");
-
-		springDaoConseiller = (IConseillerDao) appContext.getBean("IClientDao");
+		
 	}
 
 	/* (non-Javadoc)
@@ -38,22 +35,17 @@ public class TestSpringDAOConseiller extends TestCase {
 	 */
 	protected void tearDown() throws Exception {
 		super.tearDown();
-		conseiller = null;
-		appContext = null;
-		springDaoConseiller = null;
 	}
 	
+	@Test
 	public void testCreerConseiller() {
+		conseiller = new Conseiller("Theodorou", "Thomas", "Theo", "toto");
+		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
+
+		springDaoConseiller = (IConseillerDao) appContext.getBean(IConseillerDao.class);
 		springDaoConseiller.save(conseiller);
 	}
-	
-	public void testFindByLogin() {
-		List<Conseiller> listConseiller = springDaoConseiller.findByLogin(conseiller.getNom());
-		for(Conseiller e : listConseiller) {
-			System.out.println(e.getNom());
-		}
-		assertNotNull(listConseiller);
-	}
+
 
 	
 }
