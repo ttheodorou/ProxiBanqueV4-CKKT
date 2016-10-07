@@ -3,9 +3,15 @@ package com.proxibanquev4.ckkt.service;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import com.proxibanquev4.ckkt.dao.IConseillerDao;
 import com.proxibanquev4.ckkt.domaine.Client;
 
 public class ClientService {
+	
+	@Inject
+	IConseillerDao dao;
 	
 	public void creerClient(Client client) {
 		

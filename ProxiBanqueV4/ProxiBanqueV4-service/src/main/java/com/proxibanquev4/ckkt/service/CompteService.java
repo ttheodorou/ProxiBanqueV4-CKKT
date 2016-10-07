@@ -1,10 +1,21 @@
 package com.proxibanquev4.ckkt.service;
 
+import javax.inject.Inject;
+
 import com.proxibanquev4.ckkt.domaine.CompteBancaire;
 
 public class CompteService {
 	
-//	CompteDAO compteDAO = new CompteDAO();
+//	@Inject
+//	ICompteDAO compteDAO;
+//	
+	public void creerCompte(CompteBancaire compteACreer) {
+		
+	}
+	
+	public void supprimerCompte(CompteBancaire compteACreer) {
+		
+	}
 	
 	public boolean virement(CompteBancaire compteADebiter, CompteBancaire compteACrediter, double montant) {
 		debiter(compteADebiter, montant);
