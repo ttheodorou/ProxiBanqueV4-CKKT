@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<f:view>
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>ProxibanqueV3</title>
+	</head>
+
+	<body>
+		<!-- DECLARATION DU TEMPLATE DONT LA PAGE EST CLIENTE -->
+		<ui:composition template="/template/layoutC.xhtml">
+
+			<!-- Redefinition de la zone 'content' du layout  	-->
+			<ui:define name="content">
+				<body>
+					<h3>Creation client</h3>
+					<h:form id="CreationClient">
+						<h:panelGrid columns="2" cellpadding="2">
+							<h:outputLabel for="#{clientbean.nom}" value="Nom" />
+							<h:inputText value="#{clientbean.nom}" label="Nom"
+								required="true" />
+							<h:outputLabel for="#{clientbean.prenom}" value="Prenom" />
+							<h:inputText value="#{clientbean.prenom}" label="Prenom"
+								required="true" />
+							<h:outputLabel for="#{clientbean.adresse}" value="Adresse" />
+							<h:inputText value="#{clientbean.adresse}" label="Adresse"
+								required="true" />
+							<h:outputLabel for="#{clientbean.email}" value="Email" />
+							<h:inputText value="#{clientbean.email}" label="Email"
+								required="true" />
+						</h:panelGrid>
+						<h:commandButton type="submit" value="Creation"
+							action="#{clientbean.update}">
+							<f:param name="i" value="1" />
+						</h:commandButton>
+					</h:form>
+					<h3>Creation compte</h3>
+					<h:form id="CreationCompte">
+						<h:panelGrid columns="2" cellpadding="2">
+							<h:outputLabel for="selectionclient1" value="Selection client" />
+							<p:selectOneMenu id="selectionclient1" value="#{clientbean.id}"
+								style="width:200px">
+								<f:selectItems value="#{clientbean.id}" />
+							</p:selectOneMenu>
+							<h:outputLabel for="selectioncompte1" value="Type compte" />
+							<p:selectOneMenu id="selectioncompte1" value="#{clientbean.id}"
+								style="width:200px">
+								<f:selectItem itemLabel="Courant" itemValue="Courant" />
+								<f:selectItem itemLabel="Epargne" itemValue="Epargne" />
+							</p:selectOneMenu>
+							<h:outputLabel for="#{comptebean.montant}" value="Montant" />
+							<h:inputText value="#{comptebean.montant}" label="Montant"
+								required="true">
+								<f:convertNumber />
+							</h:inputText>
+						</h:panelGrid>
+						<h:commandButton type="submit" value="Creation compte"
+							action="#{clientbean.update}">
+							<f:param name="i" value="1" />
+						</h:commandButton>
+					</h:form>
+					<h3>Edition client</h3>
+					<h:form id="MAJ">
+						<h:panelGrid columns="2" cellpadding="2">
+							<h:outputLabel for="selectionclient2" value="Selection client" />
+							<p:selectOneMenu id="selectionclient2" value="#{clientbean.id}"
+								style="width:200px">
+								<f:selectItems value="#{clientbean.id}" />
+							</p:selectOneMenu>
+							<h:outputLabel for="#{clientbean.nom}" value="Nom" />
+							<h:inputText value="#{clientbean.nom}" label="Nom"
+								required="true" />
+							<h:outputLabel for="#{clientbean.prenom}" value="Prenom" />
+							<h:inputText value="#{clientbean.prenom}" label="Prenom"
+								required="true" />
+							<h:outputLabel for="#{clientbean.adresse}" value="Adresse" />
+							<h:inputText value="#{clientbean.adresse}" label="Adresse"
+								required="true" />
+							<h:outputLabel for="#{clientbean.email}" value="Email" />
+							<h:inputText value="#{clientbean.email}" label="Email"
+								required="true" />
+						</h:panelGrid>
+						<h:commandButton type="submit" value="Mettre A Jour"
+							action="#{clientbean.update}">
+							<f:param name="i" value="1" />
+						</h:commandButton>
+					</h:form>
+					
+					<h3>Suppression client</h3>
+					<h:form id="Suppression">
+						<h:panelGrid columns="2" cellpadding="2">
+							<h:outputLabel for="selectionclient3" value="Selection client" />
+							<p:selectOneMenu id="selectionclient3" value="#{clientbean.id}"
+								style="width:200px">
+								<f:selectItems value="#{clientbean.id}" />
+							</p:selectOneMenu>
+						</h:panelGrid>
+						<h:commandButton type="submit" value="Supprimer"
+							action="#{clientbean.delete}">
+							<f:param name="i" value="1" />
+						</h:commandButton>
+					</h:form>
+				</body>
+			</ui:define>
+
+		</ui:composition>
+	</body>
+</f:view>
+</html>
+
+

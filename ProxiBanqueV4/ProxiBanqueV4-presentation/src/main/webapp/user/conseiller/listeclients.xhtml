@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>ProxibanqueV4</title>
+</head>
+
+<body>
+	<!-- DECLARATION DU TEMPLATE DONT LA PAGE EST CLIENTE -->
+	<ui:composition template="/template/layoutC.xhtml">
+
+		<!-- Redefinition de la zone 'content' du layout  	-->
+		<ui:define name="content">
+			<body>
+				<h3>Liste des clients</h3>
+				<p:dataTable var="client" value="#{clientbean.clients}">
+					<p:column headerText="Id">
+						<h:outputText value="#{client.id}">
+							<f:convertNumber />
+						</h:outputText>
+					</p:column>
+					<p:column headerText="Nom">
+						<h:outputText value="#{client.nom}" />
+					</p:column>
+					<p:column headerText="Prenom">
+						<h:outputText value="#{client.prenom}" />
+					</p:column>
+					<p:column headerText="Adresse">
+						<h:outputText value="#{client.adresse}" />
+					</p:column>
+					<p:column headerText="Email">
+						<h:outputText value="#{client.email}" />
+					</p:column>
+				</p:dataTable>
+			</body>
+		</ui:define>
+
+	</ui:composition>
+</body>
+
+</html>
+
+
