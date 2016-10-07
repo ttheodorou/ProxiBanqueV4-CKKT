@@ -10,7 +10,7 @@ import javax.persistence.Entity;
  * @author CKKT
  */
 @Entity
-@DiscriminatorValue("GERANT")
+@DiscriminatorValue("gerant")
 public class Gerant extends User {
 	
 	// Constructeur de la classe Gerant

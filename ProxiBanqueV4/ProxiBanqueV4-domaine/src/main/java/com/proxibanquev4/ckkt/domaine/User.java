@@ -18,10 +18,16 @@ import javax.persistence.OneToMany;
  */
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name = "ROLE")
-@DiscriminatorValue("USER")
-public abstract class User extends Personne{
+@DiscriminatorColumn(name = "role")
+@DiscriminatorValue("user")
+public abstract class User {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
+	private long idPersonne;
+	
+	private String nom;
+	private String prenom;
 	private String login;
 	private String password;
 	
@@ -39,7 +45,8 @@ public abstract class User extends Personne{
 	 * @param clients
 	 */
 	public User(String nom, String prenom, String login, String password, List<Client> clients) {
-		super(nom, prenom);
+		this.nom = nom;
+		this.prenom = prenom;
 		this.login = login;
 		this.password = password;
 		this.clients = clients;
@@ -53,7 +60,8 @@ public abstract class User extends Personne{
 	 * @param password
 	 */
 	public User(String nom, String prenom, String login, String password) {
-		super(nom, prenom);
+		this.nom = nom;
+		this.prenom = prenom;
 		this.login = login;
 		this.password = password;
 	}
@@ -64,7 +72,8 @@ public abstract class User extends Personne{
 	 * @param prenom
 	 */
 	public User(String nom, String prenom) {
-		super(nom, prenom);
+		this.nom = nom;
+		this.prenom = prenom;
 		// TODO Auto-generated constructor stub
 	}
 
@@ -73,7 +82,7 @@ public abstract class User extends Personne{
 	 * @param nom
 	 */
 	public User(String login) {
-		super(login);
+		this.login = login;
 		// TODO Auto-generated constructor stub
 	}
 	
@@ -130,4 +139,69 @@ public abstract class User extends Personne{
 		this.password = password;
 	}
 
+	/**
+	 * Méthode permettant d'obtenir le paramètre : idPersonne
+	 * @return idPersonne
+	 */
+	public long getIdPersonne() {
+		return idPersonne;
+	}
+
+	/**
+	 * Méthode permettant de modifier le paramètre : idPersonne
+	 * @param idPersonne le paramètre idPersonne à modifier
+	 */
+	public void setIdPersonne(long idPersonne) {
+		this.idPersonne = idPersonne;
+	}
+
+	/**
+	 * Méthode permettant d'obtenir le paramètre : nom
+	 * @return nom
+	 */
+	public String getNom() {
+		return nom;
+	}
+
+	/**
+	 * Méthode permettant de modifier le paramètre : nom
+	 * @param nom le paramètre nom à modifier
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	/**
+	 * Méthode permettant d'obtenir le paramètre : prenom
+	 * @return prenom
+	 */
+	public String getPrenom() {
+		return prenom;
+	}
+
+	/**
+	 * Méthode permettant de modifier le paramètre : prenom
+	 * @param prenom le paramètre prenom à modifier
+	 */
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	/**
+	 * Méthode permettant d'obtenir le paramètre : clients
+	 * @return clients
+	 */
+	public List<Client> getClients() {
+		return clients;
+	}
+
+	/**
+	 * Méthode permettant de modifier le paramètre : clients
+	 * @param clients le paramètre clients à modifier
+	 */
+	public void setClients(List<Client> clients) {
+		this.clients = clients;
+	}
+
+	
 }
