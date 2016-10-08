@@ -18,7 +18,7 @@
 		<ui:define name="content">
 			<body>
 				<h3>Liste des clients</h3>
-				<p:dataTable var="client" value="#{clientbean.clients}">
+				<p:dataTable var="client" value="#{listeClientsBean.listeClients}">
 					<p:column headerText="Id">
 						<h:outputText value="#{client.id}">
 							<f:convertNumber />
@@ -31,7 +31,7 @@
 						<h:outputText value="#{client.prenom}" />
 					</p:column>
 					<p:column headerText="Adresse">
-						<h:outputText value="#{client.adresse}" />
+						<h:outputText value="#{client.adresse.toString}" />
 					</p:column>
 					<p:column headerText="Email">
 						<h:outputText value="#{client.email}" />

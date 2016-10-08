@@ -24,13 +24,10 @@ import com.proxibanquev4.ckkt.service.CompteService;
  * @author Trio
  *
  */
-@ManagedBean(name = "virementbean")
+@ManagedBean(name = "virementBean")
 @ViewScoped
 public class VirementBean implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
 
 	private List<Client> listeDesClients = new ArrayList<Client>();
@@ -49,7 +46,7 @@ public class VirementBean implements Serializable {
 
 	private String sommeADebiter;
 
-	@ManagedProperty(value = "#{loginbean}")
+	@ManagedProperty(value = "#{loginBean}")
 	private LoginBean loginBean;
 
 	ClientService clientService = new ClientService();
@@ -143,19 +140,19 @@ public class VirementBean implements Serializable {
 			resultat = compte2.substring(compte2.lastIndexOf("=") + 1, compte2.length());
 			idCompte2 = Long.parseLong(resultat);
 			montant = Double.parseDouble(sommeADebiter);
-//			try {
-				compteDebite = cptService.lireCompteParId(idCompte1);
-				compteCredite = cptService.lireCompteParId(idCompte2);
-//			} catch (DAOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//			try {
-				cptService.virement(compteDebite, compteCredite, montant);
-//			} catch (ServiceException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
+			// try {
+			compteDebite = cptService.lireCompteParId(idCompte1);
+			compteCredite = cptService.lireCompteParId(idCompte2);
+			// } catch (DAOException e) {
+			// // TODO Auto-generated catch block
+			// e.printStackTrace();
+			// }
+			// try {
+			cptService.virement(compteDebite, compteCredite, montant);
+			// } catch (ServiceException e) {
+			// // TODO Auto-generated catch block
+			// e.printStackTrace();
+			// }
 			String redirectVrai = loginBean.getNavigateBean().redirectToMenuConseiller();
 
 			return redirectVrai;

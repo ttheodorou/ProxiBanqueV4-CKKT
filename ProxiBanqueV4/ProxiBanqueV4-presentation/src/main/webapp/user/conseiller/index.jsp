@@ -8,6 +8,6 @@
 </head>
 <body>
 	
-<jsp:forward page="listeclients.xhtml"></jsp:forward> 
+<jsp:forward page="menuconseiller.xhtml"></jsp:forward> 
 </body>
 </html>

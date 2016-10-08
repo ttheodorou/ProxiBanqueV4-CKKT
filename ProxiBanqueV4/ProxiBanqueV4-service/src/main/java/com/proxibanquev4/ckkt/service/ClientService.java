@@ -2,11 +2,15 @@ package com.proxibanquev4.ckkt.service;
 
 import java.util.List;
 
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
 import com.proxibanquev4.ckkt.dao.IClientDao;
 import com.proxibanquev4.ckkt.domaine.Client;
 
+@ManagedBean(name = "clientService")
+@ApplicationScoped
 public class ClientService {
 
 	@Inject

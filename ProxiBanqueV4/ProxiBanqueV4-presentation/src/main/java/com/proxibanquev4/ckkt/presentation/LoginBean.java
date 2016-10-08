@@ -1,19 +1,18 @@
 package com.proxibanquev4.ckkt.presentation;
 
 import java.io.Serializable;
-import java.security.Principal;
 
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
+import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.proxibanquev4.ckkt.domaine.Conseiller;
-import com.proxibanquev4.ckkt.service.ConseillerService;
 
 @ManagedBean(name = "loginBean")
 @SessionScoped
@@ -41,6 +40,7 @@ public class LoginBean implements Serializable {
 	// }
 
 	public LoginBean() {
+		doLogin();
 		HttpServletRequest request = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext()
 				.getRequest();
 

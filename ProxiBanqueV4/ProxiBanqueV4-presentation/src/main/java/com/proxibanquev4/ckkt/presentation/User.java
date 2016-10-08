@@ -14,8 +14,22 @@ public class User {
 	ConseillerService conseillerService;
 
 	public Conseiller findByLogin(String login) {
+		System.out.println("méthode findByLogin de User dans presentation ");
 
 		return conseillerService.lireConseillerParLogin(login);
 	}
+
+	public ConseillerService getConseillerService() {
+		return conseillerService;
+	}
+
+	public void setConseillerService(ConseillerService conseillerService) {
+		this.conseillerService = conseillerService;
+	}
+
+	public User() {
+		super();
+	}
+	
 
 }

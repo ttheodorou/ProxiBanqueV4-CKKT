@@ -10,8 +10,7 @@ import java.io.Serializable;
 /**
  * Created by Guillaume on 12/09/2016, modifié par CKKT le 07/10/2016.
  */
-@ManagedBean
-@Named
+@ManagedBean(name = "navigateBean")
 @SessionScoped
 public class NavigateBean implements Serializable{
 
@@ -39,12 +38,31 @@ public class NavigateBean implements Serializable{
         return "/login.xhtml";
     }
 
+//    /**
+//     * Permet de rediriger vers la page des clients du conseiller
+//     *
+//     * @return l'adresse de la page menuconseiller
+//     */
+//    public String redirectToMenuConseiller(){
+//        return "/user/conseiller/listeclients.xhtml?faces-redirect=true";
+//    }
+//
+//
+//    /**
+//     * Permet de naviguer vers la page des clients du conseiller
+//     *
+//     * @return l'adresse relative de la page menuconseiller
+//     */
+//    public String toMenuConseiller(){
+//        return "/user/conseiller/listeclients.xhtml";
+//    }
+    
     /**
      * Permet de rediriger vers la page des clients du conseiller
      *
      * @return l'adresse de la page menuconseiller
      */
-    public String redirectToMenuConseiller(){
+    public String redirectToListeClients(){
         return "/user/conseiller/listeclients.xhtml?faces-redirect=true";
     }
 
@@ -54,7 +72,7 @@ public class NavigateBean implements Serializable{
      *
      * @return l'adresse relative de la page menuconseiller
      */
-    public String toMenuConseiller(){
+    public String toListeClients(){
         return "/user/conseiller/listeclients.xhtml";
     }
 
