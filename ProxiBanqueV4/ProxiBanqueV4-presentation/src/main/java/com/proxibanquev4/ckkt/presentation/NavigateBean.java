@@ -3,12 +3,15 @@ package com.proxibanquev4.ckkt.presentation;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.inject.Named;
+
 import java.io.Serializable;
 
 /**
  * Created by Guillaume on 12/09/2016, modifié par CKKT le 07/10/2016.
  */
 @ManagedBean
+@Named
 @SessionScoped
 public class NavigateBean implements Serializable{
 
