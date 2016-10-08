@@ -62,7 +62,7 @@ public class VirementBean implements Serializable {
 	@PostConstruct
 	public void init() {
 		// try {
-		listeDesClients = clientService.lireTousClients(loginBean.conseiller.getIdPersonne());
+		listeDesClients = clientService.lireTousClients(loginBean.getConseiller().getIdPersonne());
 		clients1 = new HashMap<String, String>();
 		int tailleListeDesClients = listeDesClients.size();
 
@@ -144,8 +144,8 @@ public class VirementBean implements Serializable {
 			idCompte2 = Long.parseLong(resultat);
 			montant = Double.parseDouble(sommeADebiter);
 //			try {
-				compteDebite = cptService.lireUnCompteBancaire(idCompte1);
-				compteCredite = cptService.lireUnCompteBancaire(idCompte2);
+				compteDebite = cptService.lireCompteParId(idCompte1);
+				compteCredite = cptService.lireCompteParId(idCompte2);
 //			} catch (DAOException e) {
 //				// TODO Auto-generated catch block
 //				e.printStackTrace();
