@@ -21,12 +21,14 @@ public class ConseillerService {
 	}
 	
 	public Conseiller lireConseillerParLogin(String login) {
-		List<Conseiller> listeConseiller = dao.findByLogin(login);
-		if (listeConseiller.isEmpty()) {
-			return null;
-		} else {
-			return listeConseiller.get(0);
-		}
+		return dao.findByLogin(login);
+		
+//		List<Conseiller> listeConseiller = dao.findByLogin(login);
+//		if (listeConseiller.isEmpty()) {
+//			return null;
+//		} else {
+//			return listeConseiller.get(0);
+//		}
 	}
 	
 	public List<Conseiller> lireTousConseillers() {
