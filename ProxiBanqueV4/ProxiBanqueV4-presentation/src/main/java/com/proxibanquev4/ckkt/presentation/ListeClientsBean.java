@@ -9,21 +9,25 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import com.proxibanquev4.ckkt.domaine.Client;
 import com.proxibanquev4.ckkt.service.ClientService;
 
 @ManagedBean(name = "listeClientsBean")
 @ViewScoped
+@Component
 public class ListeClientsBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private List<Client> listeClients;
 
-	@ManagedProperty("#{clientService}")
+	@Autowired
 	private ClientService clientService;
 
-	@ManagedProperty(value = "#{loginbean}")
+	@Autowired
 	private LoginBean loginBean;
 
 	@PostConstruct

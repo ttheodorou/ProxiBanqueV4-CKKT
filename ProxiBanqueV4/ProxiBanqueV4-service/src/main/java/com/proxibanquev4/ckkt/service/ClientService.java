@@ -6,11 +6,14 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Component;
+
 import com.proxibanquev4.ckkt.dao.IClientDao;
 import com.proxibanquev4.ckkt.domaine.Client;
 
 @ManagedBean(name = "clientService")
 @ApplicationScoped
+@Component
 public class ClientService {
 
 	@Inject

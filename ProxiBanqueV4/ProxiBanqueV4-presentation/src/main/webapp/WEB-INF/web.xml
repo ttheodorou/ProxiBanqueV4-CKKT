@@ -16,33 +16,33 @@
 	</context-param>
 
 
-	<servlet>
-		<servlet-name>ContactManager</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value></param-value>
-		</init-param>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>ContactManager</servlet-name>
-		<url-pattern>*.xhtml</url-pattern>
-	</servlet-mapping>
-
-
-	<!-- 2/ Mapping URLS /Faces/* vers la servlet JSF Faces Servlet -->
 <!-- 	<servlet> -->
-<!-- 		<servlet-name>Faces Servlet</servlet-name> -->
-<!-- 		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class> -->
+<!-- 		<servlet-name>ContactManager</servlet-name> -->
+<!-- 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class> -->
+<!-- 		<init-param> -->
+<!-- 			<param-name>contextConfigLocation</param-name> -->
+<!-- 			<param-value></param-value> -->
+<!-- 		</init-param> -->
 <!-- 		<load-on-startup>1</load-on-startup> -->
 <!-- 	</servlet> -->
 
 <!-- 	<servlet-mapping> -->
-<!-- 		<servlet-name>Faces Servlet</servlet-name> -->
+<!-- 		<servlet-name>ContactManager</servlet-name> -->
 <!-- 		<url-pattern>*.xhtml</url-pattern> -->
 <!-- 	</servlet-mapping> -->
+
+
+	<!-- 2/ Mapping URLS /Faces/* vers la servlet JSF Faces Servlet -->
+	<servlet>
+		<servlet-name>Faces Servlet</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Faces Servlet</servlet-name>
+		<url-pattern>*.xhtml</url-pattern>
+	</servlet-mapping>
 
 	<!-- 3/ Execution JSF en mode 'developpement'. logs supplémentaires. -->
 	<context-param>

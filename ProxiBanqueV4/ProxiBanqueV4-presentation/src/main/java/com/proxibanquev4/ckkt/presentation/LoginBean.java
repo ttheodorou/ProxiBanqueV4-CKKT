@@ -3,27 +3,28 @@ package com.proxibanquev4.ckkt.presentation;
 import java.io.Serializable;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.SessionScoped;
+import javax.faces.bean.RequestScoped;
 import javax.faces.context.FacesContext;
-import javax.inject.Named;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 import com.proxibanquev4.ckkt.domaine.Conseiller;
 
-@ManagedBean(name = "loginBean")
-@SessionScoped
+@ManagedBean(name = "loginBean", eager = true)
+@RequestScoped
+@Component
 public class LoginBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	@ManagedProperty(value = "#{navigateBean}")
+	@Autowired
 	private NavigateBean navigateBean;
 
-//	private ConseillerService conseillerService;
+	// private ConseillerService conseillerService;
 	private Conseiller conseiller;
 
 	private String login;
@@ -50,6 +51,7 @@ public class LoginBean implements Serializable {
 		user = context.getBean(User.class);
 		conseiller = user.findByLogin(login);
 	}
+
 	public String doLogin() {
 		return "tu as appelé la méthode doLogin";
 	}
@@ -80,13 +82,13 @@ public class LoginBean implements Serializable {
 		this.login = login;
 	}
 
-//	public ConseillerService getConseillerService() {
-//		return conseillerService;
-//	}
-//
-//	public void setConseillerService(ConseillerService conseillerService) {
-//		this.conseillerService = conseillerService;
-//	}
+	// public ConseillerService getConseillerService() {
+	// return conseillerService;
+	// }
+	//
+	// public void setConseillerService(ConseillerService conseillerService) {
+	// this.conseillerService = conseillerService;
+	// }
 
 	public static long getSerialversionuid() {
 		return serialVersionUID;
