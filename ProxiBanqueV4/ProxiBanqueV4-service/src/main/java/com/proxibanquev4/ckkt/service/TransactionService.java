@@ -21,15 +21,13 @@ public class TransactionService {
 	
 	@Inject
 	ITransactionDao dao;
-	@Inject
-	Transaction transaction;
-	
 	
 	public void creerTransaction(CompteBancaire compteDebiteur, CompteBancaire compteCrediteur, double montant) {
-		this.transaction.setCompteCrediteur(compteCrediteur);
-		this.transaction.setCompteDebiteur(compteDebiteur);
-		this.transaction.setMontant(montant);
-		this.transaction.setDateTransaction(new Date());
+		Transaction transaction = new Transaction();
+		transaction.setCompteCrediteur(compteCrediteur);
+		transaction.setCompteDebiteur(compteDebiteur);
+		transaction.setMontant(montant);
+		transaction.setDateTransaction(new Date());
 		dao.save(transaction);		
 	}
 
