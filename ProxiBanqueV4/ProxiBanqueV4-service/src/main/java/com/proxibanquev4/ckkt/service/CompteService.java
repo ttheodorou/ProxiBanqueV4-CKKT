@@ -16,6 +16,8 @@ public class CompteService {
 	
 	@Inject
 	ICompteBancaireDao dao;
+	@Inject
+	TransactionService transactionService;
 	
 	public void creerCompte(CompteBancaire compteACreer) {
 		dao.save(compteACreer);
@@ -33,9 +35,14 @@ public class CompteService {
 		dao.delete(compteASupprimer);
 	}
 	
-	public void virement(CompteBancaire compteADebiter, CompteBancaire compteACrediter, double montant) {
+	public boolean virement(CompteBancaire compteADebiter, CompteBancaire compteACrediter, double montant) {
+		boolean status = true;
+		
 		debiter(compteADebiter, montant);
 		crediter(compteACrediter, montant);
+		transactionService.creerTransaction(compteADebiter, compteACrediter, montant);
+		
+		return status;
 	}
 	
 	public void crediter (CompteBancaire compteACrediter, double montant) {

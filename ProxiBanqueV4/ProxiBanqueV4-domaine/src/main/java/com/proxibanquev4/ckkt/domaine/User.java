@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -31,7 +32,7 @@ public abstract class User {
 	private String login;
 	private String password;
 	
-	@OneToMany(mappedBy = "conseiller")
+	@OneToMany( mappedBy = "conseiller", fetch=FetchType.EAGER)
 	private List<Client> clients;
 	
 	// Constructeur de la classe User
