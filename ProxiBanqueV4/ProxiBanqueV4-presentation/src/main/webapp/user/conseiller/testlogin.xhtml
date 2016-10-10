@@ -12,7 +12,7 @@
 
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Menu Conseiller</title>
+<title>test login</title>
 </head>
 
 <h:body>
@@ -22,12 +22,13 @@
 
 		<!-- 	Redéfinission de la zone 'content' du layout -->
 		<ui:define name="content">
+		Bonjour
+		 <h:outputText id="id1" value="#{menuConseillerBean.conseiller.nom}" />
 
 
 
-			<p:commandButton value="Veuillez continuer" id="redirection"
-				action="#{menuConseillerBean.redirect}"
-				styleClass="ui-priority-primary" />
+			
+
 		</ui:define>
 	</ui:composition>
 

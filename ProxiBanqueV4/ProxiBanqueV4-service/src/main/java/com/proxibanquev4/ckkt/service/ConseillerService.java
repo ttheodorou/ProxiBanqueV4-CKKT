@@ -2,15 +2,16 @@ package com.proxibanquev4.ckkt.service;
 
 import java.util.List;
 
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
+
+import org.springframework.stereotype.Component;
 
 import com.proxibanquev4.ckkt.dao.IConseillerDao;
 import com.proxibanquev4.ckkt.domaine.Conseiller;
 
-@ManagedBean(name = "conseillerService")
-@ApplicationScoped
+//@ManagedBean(name = "conseillerService")
+//@ApplicationScoped
+@Component
 public class ConseillerService {
 	
 	@Inject
@@ -44,7 +45,11 @@ public class ConseillerService {
 	}
 	
 	public void supprimerConseiller(Conseiller conseillerASupprimer) {
-		dao.delete(conseillerASupprimer);		
+		dao.delete(conseillerASupprimer);	
+	}
+	
+	public Conseiller test(String login) {
+		return new Conseiller("Thomas", "Theodorou");
 	}
 
 }

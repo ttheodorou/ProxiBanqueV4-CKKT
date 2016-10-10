@@ -10,8 +10,8 @@ import com.proxibanquev4.ckkt.service.ConseillerService;
 @Component
 public class User {
 
-	@Inject
-	ConseillerService conseillerService;
+//	@Inject
+	ConseillerService conseillerService = new ConseillerService();
 
 	public Conseiller findByLogin(String login) {
 		System.out.println("méthode findByLogin de User dans presentation ");
