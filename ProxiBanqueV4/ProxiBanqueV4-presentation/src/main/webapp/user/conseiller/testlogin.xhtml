@@ -23,11 +23,18 @@
 		<!-- 	Redéfinission de la zone 'content' du layout -->
 		<ui:define name="content">
 		Bonjour
-		 <h:outputText id="id1" value="#{menuConseillerBean.conseiller.nom}" />
+<!-- 		 <h:outputText id="id1" value="#{loginBean.conseiller.nom}" /> -->
+			<br></br>
+			<h:outputText id="id2" value="#{menuConseillerBean.conseiller.nom}" />
+			<br></br>
+			<br></br>
+			<p:commandButton value="liste des clients" id="redirection"
+				action="#{navigateBean.redirectToListeClients}"
+				styleClass="ui-priority-primary" />
 
 
 
-			
+
 
 		</ui:define>
 	</ui:composition>

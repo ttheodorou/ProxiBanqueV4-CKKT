@@ -14,17 +14,17 @@ import org.springframework.stereotype.Component;
 import com.proxibanquev4.ckkt.domaine.Client;
 import com.proxibanquev4.ckkt.service.ClientService;
 
-@ManagedBean(name = "listeClientsBean")
+@ManagedBean(name = "listeClientsAgenceBean")
 @ViewScoped
 @Component
-public class ListeClientsBean implements Serializable {
+public class ListeClientsAgenceBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	private List<Client> listeClients;
 
-//	@Inject
-//	private ClientService clientService;
+	@Inject
+	private ClientService clientService;
 
 	@Inject
 	MenuConseillerBean menuConseillerBean;
@@ -35,7 +35,7 @@ public class ListeClientsBean implements Serializable {
 	}
 
 	public void refresh() {
-		listeClients = menuConseillerBean.conseiller.getClients();
+		listeClients = (ArrayList<Client>) clientService.lireTousClients(menuConseillerBean.conseiller.getIdPersonne());
 	}
 
 	public List<Client> getListeClients() {
@@ -46,12 +46,12 @@ public class ListeClientsBean implements Serializable {
 		this.listeClients = listeClients;
 	}
 
-//	public ClientService getClientService() {
-//		return clientService;
-//	}
-//
-//	public void setClientService(ClientService clientService) {
-//		this.clientService = clientService;
-//	}
+	public ClientService getClientService() {
+		return clientService;
+	}
+
+	public void setClientService(ClientService clientService) {
+		this.clientService = clientService;
+	}
 
 }

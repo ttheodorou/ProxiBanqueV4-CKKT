@@ -7,18 +7,24 @@
 <body>
 	<ui:composition>
 		<div align="right">
-			<h:link outcome="/0000G.xhtml" value="Accéder à l'interface gérant">
-				<f:param name="i" value="5" />
-			</h:link>
+		<h:form>
+			<p:commandButton value="Accès à l'interface gérant"
+				id="redirectConseiller"
+				action="#{navigateBean.redirectToListeClientsAgence}"
+				styleClass="ui-priority-primary" />
+			<f:param name="i" value="5" />
+			
 			<br />
 			<h:link outcome="/0000C.xhtml" value="Logout">
 				<f:param name="i" value="6" />
 			</h:link>
+			</h:form>
 		</div>
 		<H1 align="left">Interface conseiller</H1>
 		<h:form id="form">
 			<p:tabMenu activeIndex="#{param.i}">
-				<p:menuitem value="Liste Clients" outcome="/0000C.xhtml">
+				<p:menuitem value="Liste Clients"
+					action="#{navigateBean.redirectToListeClients}">
 					<f:param name="i" value="0" />
 				</p:menuitem>
 				<p:menuitem value="Edition Clients" outcome="/0000C.xhtml">
