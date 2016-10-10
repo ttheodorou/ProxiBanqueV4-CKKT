@@ -67,9 +67,13 @@ public class Transaction {
 		this.montant = montant;
 	}
 
+	/**
+	 * Constructeur de la classe Transaction.java
+	 */
+	public Transaction() {
+		super();
+	}
 
-
-	
 	
 	// Getter et Setter de la classe Transaction
 	

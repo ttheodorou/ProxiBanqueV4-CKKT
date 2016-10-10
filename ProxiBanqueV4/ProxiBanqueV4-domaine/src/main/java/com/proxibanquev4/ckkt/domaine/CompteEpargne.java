@@ -72,9 +72,17 @@ public class CompteEpargne extends CompteBancaire {
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * Constructeur de la classe CompteEpargne.java
+	 */
+	public CompteEpargne() {
+		super();
+	}
+	
 	
 	// Getter et Setter de la classe CompteEpargne
 	
+
 	/**
 	 * Méthode permettant d'obtenir le paramètre : tauxRemuneration
 	 * @return tauxRemuneration

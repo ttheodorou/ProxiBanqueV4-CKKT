@@ -72,9 +72,17 @@ public class CompteCourant extends CompteBancaire {
 		// TODO Auto-generated constructor stub
 	}
 	
+	/**
+	 * Constructeur de la classe CompteCourant.java
+	 */
+	public CompteCourant() {
+		super();
+	}
+	
 	
 	// Getter et Setter de la classe CompteEpargne
 	
+
 	/**
 	 * Méthode permettant d'obtenir le paramètre : decouvertAutorise
 	 * @return decouvertAutorise

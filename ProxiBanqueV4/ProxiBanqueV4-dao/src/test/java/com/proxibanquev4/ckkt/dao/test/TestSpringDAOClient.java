@@ -3,7 +3,7 @@ package com.proxibanquev4.ckkt.dao.test;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.proxibanquev4.ckkt.dao.IClientDao;
@@ -48,4 +48,13 @@ public class TestSpringDAOClient extends TestCase {
 		springDaoClient.save(client);
 	}
 	
+	@Test
+	public void testFindClient() {
+		
+		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
+
+		springDaoClient = (IClientDao) appContext.getBean(IClientDao.class);
+		Client client = springDaoClient.findOne((long) 4);
+		System.out.println(client.getNom());
+	}
 }

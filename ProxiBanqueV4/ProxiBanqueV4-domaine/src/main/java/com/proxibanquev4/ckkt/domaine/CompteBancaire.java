@@ -70,6 +70,13 @@ public abstract class CompteBancaire {
 		this.proprietaire = proprietaire;
 	}
 	
+	/**
+	 * Constructeur de la classe CompteBancaire.java
+	 */
+	public CompteBancaire() {
+		super();
+	}
+	
 	
 	// Getter et Setter de la classe CompteBancaire
 	

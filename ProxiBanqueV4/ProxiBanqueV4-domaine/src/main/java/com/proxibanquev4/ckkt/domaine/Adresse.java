@@ -57,6 +57,13 @@ public class Adresse {
 		this.codePostal = codePostal;
 		this.ville = ville;
 	}
+	
+	/**
+	 * Constructeur de la classe Adresse.java
+	 */
+	public Adresse() {
+		super();
+	}
 
 	// Getter et Setter de la classe Adresse
 
