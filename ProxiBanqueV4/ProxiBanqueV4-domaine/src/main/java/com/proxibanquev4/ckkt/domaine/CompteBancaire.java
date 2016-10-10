@@ -70,6 +70,17 @@ public abstract class CompteBancaire {
 		this.proprietaire = proprietaire;
 	}
 	
+	
+	
+	/**
+	 * Constructeur de la classe CompteBancaire.java
+	 * @param solde
+	 */
+	public CompteBancaire(double solde) {
+		super();
+		this.solde = solde;
+	}
+
 	/**
 	 * Constructeur de la classe CompteBancaire.java
 	 */
