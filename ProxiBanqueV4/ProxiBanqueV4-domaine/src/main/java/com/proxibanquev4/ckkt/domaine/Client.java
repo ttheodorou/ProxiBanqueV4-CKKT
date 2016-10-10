@@ -159,6 +159,11 @@ public class Client extends Personne {
 	
 	// Getter et Setter de la classe Client
 	
+	public Client(String string, String string2, Adresse adresse2, String string3, String string4,
+			List<CompteBancaire> listeDesComptes) {
+		// TODO Auto-generated constructor stub
+	}
+
 	/**
 	 * Méthode permettant d'obtenir le paramètre : adresse
 	 * @return adresse

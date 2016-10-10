@@ -22,6 +22,7 @@
 					<p:commandButton value="Rafraichir la page" id="rafraichir"
 						action="#{listeClientsBean.refresh()}" update="client"
 						styleClass="ui-priority-primary" />
+
 					<p:dataTable id="client" var="client"
 						value="#{listeClientsBean.listeClients}">
 						<p:column headerText="Id">

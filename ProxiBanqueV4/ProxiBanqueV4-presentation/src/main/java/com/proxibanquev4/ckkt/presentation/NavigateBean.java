@@ -75,6 +75,26 @@ public class NavigateBean implements Serializable {
 	public String toListeClients() {
 		return "/user/conseiller/listeclients.xhtml";
 	}
+	
+	/**
+	 * Permet de rediriger vers la page d'édition des clients du conseiller
+	 *
+	 * @return l'adresse de la page menuconseiller
+	 */
+	public String redirectToEditionClients() {
+		return "/user/conseiller/menuprincipal.xhtml?faces-redirect=true";
+	}
+
+	/**
+	 * Permet de naviguer vers la page d'édition des clients du conseiller
+	 *
+	 * @return l'adresse relative de la page menuconseiller
+	 */
+	public String toListeEditionClients() {
+		return "/user/conseiller/menuprincipal.xhtml";
+	}
+	
+	
 	/**
 	 * Permet de rediriger vers la page des clients de l'agence
 	 *
