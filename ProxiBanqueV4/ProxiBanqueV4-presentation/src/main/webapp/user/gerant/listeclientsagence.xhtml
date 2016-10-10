@@ -23,7 +23,8 @@
 						action="#{listeClientsBean.refresh()}" update="client"
 						styleClass="ui-priority-primary" />
 
-					<p:dataTable id="client" var="client" value="#{listeClientsAgenceBean.listeClients}">
+					<p:dataTable id="client" var="client"
+						value="#{listeClientsAgenceBean.listeClientsAgence}">
 						<p:column headerText="Id">
 							<h:outputText value="#{client.idPersonne}">
 								<f:convertNumber />
@@ -41,18 +42,18 @@
 						<p:column headerText="Email">
 							<h:outputText value="#{client.mail}" />
 						</p:column>
-<!-- 						<p:column headerText="Solde CC"> -->
-<!-- 							<h:outputText value="#{client.courant.solde}"> -->
-<!-- 								<f:convertNumber /> -->
-<!-- 							</h:outputText> -->
-<!-- 						</p:column> -->
-<!-- 						<p:column headerText="Solde CE"> -->
-<!-- 							<h:outputText value="#{client.epargne.solde}"> -->
-<!-- 								<f:convertNumber /> -->
-<!-- 							</h:outputText> -->
-<!-- 						</p:column> -->
+						<!-- 						<p:column headerText="Solde CC"> -->
+						<!-- 							<h:outputText value="#{client.courant.solde}"> -->
+						<!-- 								<f:convertNumber /> -->
+						<!-- 							</h:outputText> -->
+						<!-- 						</p:column> -->
+						<!-- 						<p:column headerText="Solde CE"> -->
+						<!-- 							<h:outputText value="#{client.epargne.solde}"> -->
+						<!-- 								<f:convertNumber /> -->
+						<!-- 							</h:outputText> -->
+						<!-- 						</p:column> -->
 					</p:dataTable>
-					</h:form>
+				</h:form>
 			</body>
 		</ui:define>
 

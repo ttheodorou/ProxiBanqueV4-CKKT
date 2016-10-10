@@ -12,7 +12,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 
 import com.proxibanquev4.ckkt.domaine.Conseiller;
-import com.proxibanquev4.ckkt.service.ConseillerService;
 
 @ManagedBean(name = "menuConseillerBean")
 @SessionScoped

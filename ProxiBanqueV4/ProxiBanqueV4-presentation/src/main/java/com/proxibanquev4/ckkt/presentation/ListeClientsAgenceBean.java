@@ -21,7 +21,7 @@ public class ListeClientsAgenceBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private List<Client> listeClients;
+	private List<Client> listeClientsAgence;
 
 	@Inject
 	private ClientService clientService;
@@ -35,15 +35,16 @@ public class ListeClientsAgenceBean implements Serializable {
 	}
 
 	public void refresh() {
-		listeClients = (ArrayList<Client>) clientService.lireTousClients(menuConseillerBean.conseiller.getIdPersonne());
+		listeClientsAgence = (ArrayList<Client>) clientService
+				.lireTousClients(menuConseillerBean.conseiller.getIdPersonne());
 	}
 
 	public List<Client> getListeClients() {
-		return listeClients;
+		return listeClientsAgence;
 	}
 
 	public void setListeClients(List<Client> listeClients) {
-		this.listeClients = listeClients;
+		this.listeClientsAgence = listeClients;
 	}
 
 	public ClientService getClientService() {

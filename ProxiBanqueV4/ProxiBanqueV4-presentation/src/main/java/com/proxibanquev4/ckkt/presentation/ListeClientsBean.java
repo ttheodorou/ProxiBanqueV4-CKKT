@@ -1,7 +1,6 @@
 package com.proxibanquev4.ckkt.presentation;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -12,7 +11,6 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Component;
 
 import com.proxibanquev4.ckkt.domaine.Client;
-import com.proxibanquev4.ckkt.service.ClientService;
 
 @ManagedBean(name = "listeClientsBean")
 @ViewScoped
@@ -23,8 +21,8 @@ public class ListeClientsBean implements Serializable {
 
 	private List<Client> listeClients;
 
-//	@Inject
-//	private ClientService clientService;
+	// @Inject
+	// private ClientService clientService;
 
 	@Inject
 	MenuConseillerBean menuConseillerBean;
@@ -46,12 +44,12 @@ public class ListeClientsBean implements Serializable {
 		this.listeClients = listeClients;
 	}
 
-//	public ClientService getClientService() {
-//		return clientService;
-//	}
-//
-//	public void setClientService(ClientService clientService) {
-//		this.clientService = clientService;
-//	}
+	// public ClientService getClientService() {
+	// return clientService;
+	// }
+	//
+	// public void setClientService(ClientService clientService) {
+	// this.clientService = clientService;
+	// }
 
 }
