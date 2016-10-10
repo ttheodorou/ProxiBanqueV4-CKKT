@@ -9,6 +9,7 @@ import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.Spy;
 import org.mockito.runners.MockitoJUnitRunner;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.proxibanquev4.ckkt.dao.ICompteBancaireDao;
 import com.proxibanquev4.ckkt.domaine.CompteBancaire;
@@ -35,6 +36,7 @@ public class CompteServiceTestUnit extends TestCase {
 	@Spy
 	CompteBancaire compte2;
 	
+	private ClassPathXmlApplicationContext appContext;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -63,5 +65,14 @@ public class CompteServiceTestUnit extends TestCase {
 		assertEquals(cs.lireCompteParId(1L).getSolde(), 90.0, 1E-5);
 		assertEquals(cs.lireCompteParId(2L).getSolde(), 110.0, 1E-5);
 		
+	}
+	
+	@Test
+	public void testFindOne() {
+		appContext = new ClassPathXmlApplicationContext("spring-service.xml");
+		CompteService Compteserv = (CompteService) appContext.getBean(CompteService.class);
+		CompteBancaire compte1 = Compteserv.lireCompteParId((long) 7);
+		System.out.println(compte1.getIdCompte());
+		System.out.println(compte1.getClass());
 	}
 }
