@@ -20,17 +20,17 @@
 
 	<!--	Déclaration de beans -->	
 			
-  	<bean id="Logger" class="com.proxibanquev4;ckkt.service.logger"/>    	
-	<bean name="CompteService" class="com.proxibanquev4;ckkt.service.CompteService" />
+<!--   	<bean id="Logger" class="com.proxibanquev4;ckkt.service.logger"/>    	 -->
+<!-- 	<bean name="CompteService" class="com.proxibanquev4;ckkt.service.CompteService" /> -->
 
 	<!--	Debut de la configuration POA -->
 		
-	<aop:config>
-		<aop:pointcut id="servicePointcut"  expression="execution(*  com.proxibanquev4.ckkt.service.CompteService.virement(CompteBancaire compteADebiter, CompteBancaire compteACrediter, double montant)"/>    		
-		<aop:aspect id="loggingAspect" ref="TransactionService">    		
-		    <aop:after-returning method="logMethodExit" returning="result" pointcut-ref="servicePointcut"/>
-	    </aop:aspect>	    
-	</aop:config>
+<!-- 	<aop:config> -->
+<!-- 		<aop:pointcut id="servicePointcut"  expression="execution(*  com.proxibanquev4.ckkt.service.CompteService.virement(CompteBancaire compteADebiter, CompteBancaire compteACrediter, double montant)"/>    		 -->
+<!-- 		<aop:aspect id="loggingAspect" ref="TransactionService">    		 -->
+<!-- 		    <aop:after-returning method="logMethodExit" returning="result" pointcut-ref="servicePointcut"/> -->
+<!-- 	    </aop:aspect>	     -->
+<!-- 	</aop:config> -->
 
 	<!--	Fin de la configuration POA -->	    
 	
