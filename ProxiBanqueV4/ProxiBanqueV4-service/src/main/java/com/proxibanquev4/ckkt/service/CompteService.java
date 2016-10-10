@@ -25,6 +25,7 @@ public class CompteService {
 	}
 	
 	public CompteBancaire lireCompteParId(long idCompte) {
+		System.out.println("lire un compte par id");
 		return dao.findOne(idCompte);
 	}
 	

@@ -45,6 +45,7 @@ public class MenuConseillerBean implements Serializable {
 		ErrorBean errorBean = context.getBean(ErrorBean.class);
 		ListeClientsBean listeClientsBean = context.getBean(ListeClientsBean.class);
 		ListeClientsAgenceBean listeClientsAgenceBean = context.getBean(ListeClientsAgenceBean.class);
+		VirementBean virementBean = context.getBean(VirementBean.class);
 
 		return "/user/conseiller/testlogin.xhtml";
 	}

@@ -7,17 +7,17 @@
 <body>
 	<ui:composition>
 		<div align="right">
-		<h:form>
-			<p:commandButton value="Accès à l'interface gérant"
-				id="redirectConseiller"
-				action="#{navigateBean.redirectToListeClientsAgence}"
-				styleClass="ui-priority-primary" />
-			<f:param name="i" value="5" />
-			
-			<br />
-			<h:link outcome="/0000C.xhtml" value="Logout">
-				<f:param name="i" value="6" />
-			</h:link>
+			<h:form>
+				<p:commandButton value="Accès à l'interface gérant"
+					id="redirectConseiller"
+					action="#{navigateBean.redirectToListeClientsAgence}"
+					styleClass="ui-priority-primary" />
+				<f:param name="i" value="5" />
+
+				<br />
+				<h:link outcome="/0000C.xhtml" value="Logout">
+					<f:param name="i" value="6" />
+				</h:link>
 			</h:form>
 		</div>
 		<H1 align="left">Interface conseiller</H1>
@@ -33,7 +33,8 @@
 				<p:menuitem value="Liste Comptes Clients" outcome="/0000C.xhtml">
 					<f:param name="i" value="2" />
 				</p:menuitem>
-				<p:menuitem value="Virement" outcome="/0000C.xhtml">
+				<p:menuitem value="Virement"
+					action="#{navigateBean.redirectToVirement}">
 					<f:param name="i" value="3" />
 				</p:menuitem>
 			</p:tabMenu>
