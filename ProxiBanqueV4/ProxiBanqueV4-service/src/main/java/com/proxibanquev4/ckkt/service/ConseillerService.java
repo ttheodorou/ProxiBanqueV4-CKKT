@@ -4,14 +4,14 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.proxibanquev4.ckkt.dao.IConseillerDao;
 import com.proxibanquev4.ckkt.domaine.Conseiller;
 
 //@ManagedBean(name = "conseillerService")
 //@ApplicationScoped
-@Component
+@Service
 public class ConseillerService {
 	
 	@Inject

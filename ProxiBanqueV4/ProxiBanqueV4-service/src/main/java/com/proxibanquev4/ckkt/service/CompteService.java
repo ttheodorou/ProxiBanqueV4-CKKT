@@ -4,11 +4,14 @@ import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
 import javax.inject.Inject;
 
+import org.springframework.stereotype.Service;
+
 import com.proxibanquev4.ckkt.dao.ICompteBancaireDao;
 import com.proxibanquev4.ckkt.domaine.CompteBancaire;
 
-@ManagedBean(name = "compteService")
-@ApplicationScoped
+//@ManagedBean(name = "compteService")
+//@ApplicationScoped
+@Service
 public class CompteService {
 	
 	@Inject
