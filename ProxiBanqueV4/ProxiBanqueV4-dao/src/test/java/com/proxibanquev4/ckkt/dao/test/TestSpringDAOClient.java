@@ -1,9 +1,9 @@
 package com.proxibanquev4.ckkt.dao.test;
 
 import org.junit.After;
+import org.junit.Assume;
 import org.junit.Before;
 import org.junit.Test;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.proxibanquev4.ckkt.dao.IClientDao;
@@ -28,6 +28,9 @@ public class TestSpringDAOClient extends TestCase {
 	@Before
 	protected void setUp() throws Exception {
 		super.setUp();
+		
+		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
+		springDaoClient = (IClientDao) appContext.getBean(IClientDao.class);
 	}
 
 	/* (non-Javadoc)
@@ -38,23 +41,35 @@ public class TestSpringDAOClient extends TestCase {
 		super.tearDown();
 	}
 
+	/**
+	 * Teste la création et suppresion d'un client en s'assurent qu'aucun erreur se produit.
+	 */
 	@Test
 	public void testCreateClient() {
 		
 		client = new Client("Castro", "Clement");
-		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
-
-		springDaoClient = (IClientDao) appContext.getBean(IClientDao.class);
-		springDaoClient.save(client);
+		
+		try {
+			springDaoClient.save(client);
+			springDaoClient.delete(client);
+		} catch (IllegalArgumentException e) {
+			Assume.assumeNoException(e);
+		}
 	}
 	
 	@Test
-	public void testFindClient() {
+	public void testReadClient() {
 		
-		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
-
-		springDaoClient = (IClientDao) appContext.getBean(IClientDao.class);
-		Client client = springDaoClient.findOne((long) 4);
-		System.out.println(client.getNom());
+//		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
+//		springDaoClient = (IClientDao) appContext.getBean(IClientDao.class);
+		
+		long id = 0L;
+		
+		// Chercher le client avec l'id la plus petite.
+		while (springDaoClient.findOne(++id) == null);
+		
+		// Vérifier que le client n'est pas null
+		assertNotNull(springDaoClient.findOne(id));
 	}
 }
+

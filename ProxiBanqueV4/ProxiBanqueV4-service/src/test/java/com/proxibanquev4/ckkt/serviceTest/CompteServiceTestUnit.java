@@ -14,11 +14,15 @@ import com.proxibanquev4.ckkt.dao.ICompteBancaireDao;
 import com.proxibanquev4.ckkt.domaine.CompteBancaire;
 import com.proxibanquev4.ckkt.service.CompteService;
 
-import junit.framework.Assert;
 import junit.framework.TestCase;
 
+/**
+ * Classe de test unitaire pour la classe CompteService.
+ * @author CKKT
+ *
+ */
 @RunWith(MockitoJUnitRunner.class)
-public class CompteServiceTest extends TestCase {
+public class CompteServiceTestUnit extends TestCase {
 
 	@InjectMocks
 	CompteService cs;
@@ -35,7 +39,6 @@ public class CompteServiceTest extends TestCase {
 	@Before
 	public void setUp() throws Exception {
 		super.setUp();
-		//MockitoAnnotations.initMocks(this);
 	}
 
 	@After
@@ -43,32 +46,9 @@ public class CompteServiceTest extends TestCase {
 		super.tearDown();
 	}
 	
-	@Test
-	public void testDebiter() {
-		
-		compte1 = new CompteBancaire(100.0) {};
-		
-		Mockito.when(dao.findOne(1L)).thenReturn(compte1);
-		
-		cs.debiter(compte1, 10.0);
-		
-		Assert.assertEquals(cs.lireCompteParId(1L).getSolde(), 90.0, 1E-5);
-		
-	}
-	
-	@Test
-	public void testCrediter() {
-		
-		compte2 = new CompteBancaire(100.0) {};
-		
-		Mockito.when(dao.findOne(2L)).thenReturn(compte2);
-		
-		cs.crediter(compte2, 10.0);
-		
-		Assert.assertEquals(cs.lireCompteParId(2L).getSolde(), 110.0, 1E-5);
-		
-	}
-	
+	/**
+	 * Test unitaire de la méthode virement.
+	 */
 	@Test
 	public void testVirement() {
 		
@@ -80,8 +60,8 @@ public class CompteServiceTest extends TestCase {
 		
 		cs.virement(compte1, compte2, 10.0);
 		
-		Assert.assertEquals(cs.lireCompteParId(1L).getSolde(), 90.0, 1E-5);
-		Assert.assertEquals(cs.lireCompteParId(2L).getSolde(), 110.0, 1E-5);
+		assertEquals(cs.lireCompteParId(1L).getSolde(), 90.0, 1E-5);
+		assertEquals(cs.lireCompteParId(2L).getSolde(), 110.0, 1E-5);
 		
 	}
 }

@@ -18,7 +18,7 @@ import com.proxibanquev4.ckkt.domaine.Client;
 import com.proxibanquev4.ckkt.service.ClientService;
 
 /**
- * Classe ClientDaoTest.java Represente
+ * Classe de test non-unitaire de ClientService pour test l'interaction entre les couches service et DAO.
  * @author CKKT
  */
 @Configuration
