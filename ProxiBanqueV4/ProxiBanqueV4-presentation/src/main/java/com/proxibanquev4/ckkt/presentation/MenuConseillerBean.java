@@ -24,7 +24,6 @@ public class MenuConseillerBean implements Serializable {
 
 	User user;
 	NavigateBean navigateBean;
-
 	Conseiller conseiller;
 
 	public String redirect() {
