@@ -2,13 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xmlns:aop="http://www.springframework.org/schema/aop"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context-4.1.xsd
         http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
 		http://www.springframework.org/schema/data/repository
-        http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd"
+        http://www.springframework.org/schema/data/repository/spring-repository-1.5.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd"
 	default-autowire="byName">
 
 	<context:annotation-config />
@@ -16,4 +18,21 @@
 	<import resource="classpath*:spring-data.xml"/>
 
 
+	<!--	Déclaration de beans -->	
+			
+  	<bean id="TransactionService" class="com.proxibanquev4;ckkt.service.TransactionService"/>    	
+	<bean name="CompteService" class="com.proxibanquev4;ckkt.service.CompteService" />
+
+	<!--	Debut de la configuration POA -->
+		
+	<aop:config>
+		<aop:pointcut id="servicePointcut"  expression="execution(*  com.proxibanquev4.ckkt.service.CompteService.virement(CompteBancaire compteADebiter, CompteBancaire compteACrediter, double montant)"/>    		
+		<aop:aspect id="loggingAspect" ref="TransactionService">
+		    <aop:before method="logMethodEntry"  pointcut-ref="servicePointcut"/>    		
+		    <aop:after-returning method="logMethodExit" returning="result" pointcut-ref="servicePointcut"/>
+	    </aop:aspect>	    
+	</aop:config>
+
+	<!--	Fin de la configuration POA -->	    
+	
 </beans>
