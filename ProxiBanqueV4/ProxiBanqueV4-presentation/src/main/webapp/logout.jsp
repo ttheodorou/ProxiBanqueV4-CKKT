@@ -17,6 +17,6 @@ User '<%=request.getRemoteUser()%>' has been logged out.
 <% session.invalidate(); %>
 
 <br/><br/>
-<a href="user/index.jsp">Click here to go to test servlet</a>
+<a href="login.jsp">Click here to log again</a>
 </body>
 </html>

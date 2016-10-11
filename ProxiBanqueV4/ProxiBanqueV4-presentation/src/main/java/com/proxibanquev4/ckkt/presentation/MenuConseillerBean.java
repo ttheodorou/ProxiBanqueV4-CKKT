@@ -31,6 +31,7 @@ public class MenuConseillerBean implements Serializable {
 				.getRequest();
 
 		login = request.getUserPrincipal().getName();
+		
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring-presentation.xml");
 

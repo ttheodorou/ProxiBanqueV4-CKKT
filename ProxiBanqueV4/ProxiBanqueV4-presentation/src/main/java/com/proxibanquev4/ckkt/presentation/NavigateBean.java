@@ -39,6 +39,25 @@ public class NavigateBean implements Serializable {
 	public String toLogin() {
 		return "/login.xhtml";
 	}
+	
+	/**
+	 * Permet d'effectuer une redirection vers la page de login de conseiller
+	 *
+	 * @return l'adresse de la page login
+	 */
+	public String redirectToLogout() {
+		
+		return "/user/conseiller/listeclients.xhtml?faces-redirect=true";
+	}
+
+	/**
+	 * Permet de naviguer vers la page de login
+	 *
+	 * @return l'adresse relative de la page login
+	 */
+	public String toLogout() {
+		return "/user/conseiller/listeclients.xhtml";
+	}
 
 
 	/**

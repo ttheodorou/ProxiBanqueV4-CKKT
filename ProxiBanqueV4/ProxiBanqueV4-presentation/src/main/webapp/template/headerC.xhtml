@@ -8,6 +8,7 @@
 	<ui:composition>
 		<div align="right">
 			<h:form>
+			
 				<p:commandButton value="Accès à l'interface gérant"
 					id="redirectConseiller"
 					action="#{navigateBean.redirectToListeClientsAgence}"
@@ -15,25 +16,30 @@
 				<f:param name="i" value="5" />
 
 				<br />
-				<h:link outcome="/0000C.xhtml" value="Logout">
+				<p:commandButton value="logout"
+					id="redirectLogout"
+					action="#{logoutBean.redirect}"
+					styleClass="ui-priority-primary" />
 					<f:param name="i" value="6" />
-				</h:link>
+				
 			</h:form>
 		</div>
-		<H1 align="left">Interface conseiller</H1>
+		<p:panel header="Interface conseiller"
+					style="margin-bottom:10px;"/>
+<!-- 		<H1 align="left">Interface conseiller</H1> -->
 		<h:form id="form">
 			<p:tabMenu activeIndex="#{param.i}">
 				<p:menuitem value="Liste Clients"
 					action="#{navigateBean.redirectToListeClients}">
 					<f:param name="i" value="0" />
 				</p:menuitem>
-				<p:menuitem value="Edition Clients" action="#{navigateBean.redirectToEditionClients}">
+				<p:menuitem disabled="true" value="Edition Clients" action="#{navigateBean.redirectToEditionClients}">
 					<f:param name="i" value="1" />
 				</p:menuitem>
 				<p:menuitem value="Création Clients" action="#{navigateBean.redirectToCreationClients}">
 					<f:param name="i" value="2" />
 				</p:menuitem>
-				<p:menuitem value="Liste Comptes Clients" action="#{navigateBean.redirectToListeComptes}">
+				<p:menuitem disabled="true" value="Liste Comptes Clients" action="#{navigateBean.redirectToListeComptes}">
 					<f:param name="i" value="3" />
 				</p:menuitem>
 				<p:menuitem value="Virement"

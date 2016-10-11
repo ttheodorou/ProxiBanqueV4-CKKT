@@ -9,17 +9,21 @@
 
 
 		<div align="right">
-			<h:link outcome="/0000C.xhtml" value="Accéder à l'interface conseiller">
-				<f:param name="i" value="5" />
-			</h:link>
-			<br />
-			<h:link outcome="/0000C.xhtml" value="Logout">
+			<h:form>
+
+				<p:commandButton value="Accès à l'interface conseiller"
+					id="redirectConseiller"
+					action="#{navigateBean.redirectToListeClients}"
+					styleClass="ui-priority-primary" />
+
+				<br />
+				<p:commandButton value="logout" id="redirectLogout"
+					action="#{logoutBean.redirect}" styleClass="ui-priority-primary" />
 				<f:param name="i" value="6" />
-			</h:link>
+
+			</h:form>
 		</div>
-		<div align="left">
-			<H1>Erreur</H1>
-		</div>
+		<p:panel header="Erreur" style="margin-bottom:10px;" />
 	</ui:composition>
 
 </body>

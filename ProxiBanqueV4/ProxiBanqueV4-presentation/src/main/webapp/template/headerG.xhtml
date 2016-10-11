@@ -14,9 +14,11 @@
 					styleClass="ui-priority-primary" />
 
 				<br />
-				<!-- 			<h:link outcome="/0000C.xhtml" value="Logout"> -->
-				<!-- 				<f:param name="i" value="6" /> -->
-				<!-- 			</h:link> -->
+				<p:commandButton value="logout"
+					id="redirectLogout"
+					action="#{logoutBean.redirect}"
+					styleClass="ui-priority-primary" />
+					<f:param name="i" value="6" />
 			</h:form>
 		</div>
 		<H1 align="left">Interface gérant</H1>
@@ -34,7 +36,7 @@
 					action="#{navigateBean.redirectToTransaction}">
 					<f:param name="i" value="2" />
 				</p:menuitem>
-				<p:menuitem value="Clients à découvert" outcome="/0000G.xhtml">
+				<p:menuitem value="Clients à découvert" disabled="true">
 					<f:param name="i" value="3" />
 				</p:menuitem>
 			</p:tabMenu>

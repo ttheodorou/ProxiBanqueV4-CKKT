@@ -96,7 +96,7 @@
 		<realm-name>Espaces membres</realm-name>
 		<form-login-config>
 			<form-login-page>/login.jsp</form-login-page>
-			<form-error-page>/erreur.jsp</form-error-page>
+			<form-error-page>/Erreur401.xhtml</form-error-page>
 		</form-login-config>
 	</login-config>
 
