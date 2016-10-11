@@ -22,18 +22,20 @@
 					<p:commandButton value="Rafraichir la page" id="rafraichir"
 						action="#{listeComptesBean.refresh()}" update="compteBancaire"
 						styleClass="ui-priority-primary" />
-					<p:dataTable id="compteBancaire" var="compteBancaire"
+						
+					<p:dataTable id="compteBancaire" var="compte"
 						value="#{listeComptesBean.listeComptes}">
+						
 						<p:column headerText="Numero">
-							<h:outputText value="{compteBancaire.numCompte}">
+							<h:outputText value="#{compte.numCompte}">
 								<f:convertNumber />
 							</h:outputText>
 						</p:column>
 						<p:column headerText="Client">
-							<h:outputText value="#{compteBancaire.proprietaire.nom}" />
+							<h:outputText value="#{compte.proprietaire.nom}" />
 						</p:column>
 						<p:column headerText="Solde">
-							<h:outputText value="#{compteBancaire.solde}" />
+							<h:outputText value="#{compte.solde}" />
 						</p:column>
 					</p:dataTable>
 				</h:form>

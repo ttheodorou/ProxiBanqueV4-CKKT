@@ -24,7 +24,7 @@
 						styleClass="ui-priority-primary" />
 
 					<p:dataTable id="conseiller" var="conseiller"
-						value="#{listeClientsAgenceBean.listeConseillersAgence}">
+						value="#{listeConseillersAgenceBean.listeConseillersAgence}">
 						<p:column headerText="Id">
 							<h:outputText value="#{conseiller.idPersonne}">
 								<f:convertNumber />
@@ -35,7 +35,6 @@
 						</p:column>
 						<p:column headerText="Prenom">
 							<h:outputText value="#{conseiller.prenom}" />
-						</p:column>
 						</p:column>
 						<p:column headerText="Login">
 							<h:outputText value="#{conseiller.login}" />

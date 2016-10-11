@@ -14,7 +14,7 @@ import com.proxibanquev4.ckkt.domaine.Conseiller;
 import com.proxibanquev4.ckkt.service.ClientService;
 import com.proxibanquev4.ckkt.service.ConseillerService;
 
-@ManagedBean(name = "ListConseillersAgence")
+@ManagedBean(name = "listeConseillersAgenceBean")
 @ViewScoped
 @Component
 public class ListeConseillersAgenceBean implements Serializable {
@@ -28,7 +28,7 @@ public class ListeConseillersAgenceBean implements Serializable {
 
 	@PostConstruct
 	public void init() {
-		listeConseillersAgence = (ArrayList<Conseiller>) conseillerService.lireTousConseillers();
+//		listeConseillersAgence = (ArrayList<Conseiller>) conseillerService.lireTousConseillers();
 	}
 
 	public void refresh() {
