@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Sam 08 Octobre 2016 à 17:13
+-- Généré le :  Mar 11 Octobre 2016 à 13:55
 -- Version du serveur :  5.7.11
--- Version de PHP :  7.0.4
+-- Version de PHP :  5.6.19
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `db_pbv4_ckkt_test`
 --
-CREATE DATABASE IF NOT EXISTS `db_pbv4_ckkt_test` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `db_pbv4_ckkt_test`;
 
 -- --------------------------------------------------------
 
@@ -46,7 +44,8 @@ INSERT INTO `adresse` (`idAdresse`, `codePostal`, `nomRue`, `numRue`, `ville`) V
 (3, 69005, 'rue de charlemagne', '74', 'Lyon'),
 (4, 69005, 'rue du champs', '41', 'Lyon'),
 (5, 69005, 'rue du code', '68', 'Lyon'),
-(6, 69005, 'rue de la victoire', '92', 'Lyon');
+(6, 69005, 'rue de la victoire', '92', 'Lyon'),
+(21, 69003, 'Choisir un nom de rue', '45', 'Choisir une ville');
 
 -- --------------------------------------------------------
 
@@ -98,15 +97,15 @@ CREATE TABLE `comptebancaire` (
 --
 
 INSERT INTO `comptebancaire` (`TYPE_COMPTE`, `idCompte`, `dateOuverture`, `numCompte`, `solde`, `decouvertAutorise`, `tauxRemuneration`, `proprietaire_idPersonne`) VALUES
-('EPARGNE', 7, '2016-10-08 19:11:15', 101, 5426, NULL, 0, 4),
-('EPARGNE', 8, '2016-10-08 19:11:15', 102, 658, NULL, 0, 5),
-('EPARGNE', 9, '2016-10-08 19:11:15', 103, 946, NULL, 0, 6),
+('EPARGNE', 7, '2016-10-08 19:11:15', 101, 5968, NULL, 0, 4),
+('EPARGNE', 8, '2016-10-08 19:11:15', 102, 1508, NULL, 0, 5),
+('EPARGNE', 9, '2016-10-08 19:11:15', 103, 1416, NULL, 0, 6),
 ('EPARGNE', 10, '2016-10-08 19:11:15', 104, 6987, NULL, 0, 7),
-('EPARGNE', 11, '2016-10-08 19:11:15', 105, 5124, NULL, 0, 8),
-('COURANT', 12, '2016-10-08 19:11:15', 201, 8745, 0, NULL, 4),
-('COURANT', 13, '2016-10-08 19:11:15', 202, 7582, 0, NULL, 5),
-('COURANT', 14, '2016-10-08 19:11:15', 203, 2145, 0, NULL, 6),
-('COURANT', 15, '2016-10-08 19:11:15', 204, 3674, 0, NULL, 7);
+('EPARGNE', 11, '2016-10-08 19:11:15', 105, 4361, NULL, 0, 8),
+('COURANT', 12, '2016-10-08 19:11:15', 201, -821, 0, NULL, 4),
+('COURANT', 13, '2016-10-08 19:11:15', 202, 9345, 0, NULL, 5),
+('COURANT', 14, '2016-10-08 19:11:15', 203, -350, 0, NULL, 6),
+('COURANT', 15, '2016-10-08 19:11:15', 204, 1540, 0, NULL, 7);
 
 -- --------------------------------------------------------
 
@@ -123,9 +122,9 @@ CREATE TABLE `hibernate_sequence` (
 --
 
 INSERT INTO `hibernate_sequence` (`next_val`) VALUES
-(16),
-(16),
-(16);
+(22),
+(22),
+(22);
 
 -- --------------------------------------------------------
 
@@ -143,7 +142,7 @@ CREATE TABLE `hibernate_sequences` (
 --
 
 INSERT INTO `hibernate_sequences` (`sequence_name`, `next_val`) VALUES
-('default', 10);
+('default', 12);
 
 -- --------------------------------------------------------
 
@@ -158,6 +157,17 @@ CREATE TABLE `transaction` (
   `compteCrediteur_idCompte` bigint(20) DEFAULT NULL,
   `compteDebiteur_idCompte` bigint(20) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `transaction`
+--
+
+INSERT INTO `transaction` (`idTransaction`, `dateTransaction`, `montant`, `compteCrediteur_idCompte`, `compteDebiteur_idCompte`) VALUES
+(16, '2016-10-11 12:37:56', 850, 8, 8),
+(17, '2016-10-11 12:40:12', 542, 7, 14),
+(18, '2016-10-11 12:40:28', 763, 13, 11),
+(19, '2016-10-11 12:40:45', 470, 9, 9),
+(20, '2016-10-11 12:41:20', 1000, 13, 14);
 
 -- --------------------------------------------------------
 
