@@ -170,5 +170,11 @@ public abstract class CompteBancaire {
 	public void setProprietaire(Client proprietaire) {
 		this.proprietaire = proprietaire;
 	}
+
+	@Override
+	public String toString() {
+		return ""+ proprietaire.getNom() + ", Compte n°" + numCompte + "";
+	}
+	
 	
 }
