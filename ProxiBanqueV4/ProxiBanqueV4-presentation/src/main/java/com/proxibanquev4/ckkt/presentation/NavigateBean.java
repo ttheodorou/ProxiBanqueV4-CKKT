@@ -27,6 +27,7 @@ public class NavigateBean implements Serializable {
 	 * @return l'adresse de la page login
 	 */
 	public String redirectToLogin() {
+		
 		return "/login.xhtml?faces-redirect=true";
 	}
 
@@ -39,24 +40,6 @@ public class NavigateBean implements Serializable {
 		return "/login.xhtml";
 	}
 
-	// /**
-	// * Permet de rediriger vers la page des clients du conseiller
-	// *
-	// * @return l'adresse de la page menuconseiller
-	// */
-	// public String redirectToMenuConseiller(){
-	// return "/user/conseiller/listeclients.xhtml?faces-redirect=true";
-	// }
-	//
-	//
-	// /**
-	// * Permet de naviguer vers la page des clients du conseiller
-	// *
-	// * @return l'adresse relative de la page menuconseiller
-	// */
-	// public String toMenuConseiller(){
-	// return "/user/conseiller/listeclients.xhtml";
-	// }
 
 	/**
 	 * Permet de rediriger vers la page des clients du conseiller
@@ -75,8 +58,27 @@ public class NavigateBean implements Serializable {
 	public String toListeClients() {
 		return "/user/conseiller/listeclients.xhtml";
 	}
+	
 	/**
-	 * Permet de rediriger vers la page des clients de l'agence
+	 * Permet de rediriger vers la page des clients du conseiller
+	 *
+	 * @return l'adresse de la page menuconseiller
+	 */
+	public String redirectToEditionClients() {
+		return "/user/conseiller/editionclients.xhtml?faces-redirect=true";
+	}
+
+	/**
+	 * Permet de naviguer vers la page d'édition des clients du conseiller
+	 *
+	 * @return l'adresse relative de la page menuconseiller
+	 */
+	public String toListeEditionClients() {
+		return "/user/conseiller/editionclients.xhtml";
+	}
+	
+	/**
+	 * Permet de rediriger vers la page d'édition des clients de l'agence
 	 *
 	 * @return l'adresse de la page menuconseiller
 	 */
@@ -91,6 +93,24 @@ public class NavigateBean implements Serializable {
 	 */
 	public String toListeClientsAgence() {
 		return "/user/gerant/listeclientsagence.xhtml";
+	}
+	
+	/**
+	 * Permet de rediriger vers la page d'historique des transactions
+	 *
+	 * @return l'adresse de la page menuconseiller
+	 */
+	public String redirectToTransaction() {
+		return "/user/gerant/historique.xhtml?faces-redirect=true";
+	}
+
+	/**
+	 * Permet de naviguer vers la page d'historique des transactions
+	 *
+	 * @return l'adresse relative de la page menuconseiller
+	 */
+	public String toTransaction() {
+		return "/user/gerant/historique.xhtml";
 	}
 
 	/**

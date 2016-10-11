@@ -17,7 +17,32 @@
 		<!-- Redefinition de la zone 'content' du layout  	-->
 		<ui:define name="content">
 			<body>
-				<h3>Historique place holder</h3>
+				<h3>Liste des Transactions de l'agence</h3>
+				<h:form>
+					<p:commandButton value="Rafraichir la page" id="rafraichir"
+						action="#{historiqueTransactionBean.refresh()}" update="transaction"
+						styleClass="ui-priority-primary" />
+
+					<p:dataTable id="transaction" var="transaction"
+					
+						value="#{historiqueTransactionBean.listeTransactionsAgence}">
+						<p:column headerText="Id">
+							<h:outputText value="#{transaction.idTransaction}">
+								<f:convertNumber />
+							</h:outputText>
+						</p:column>
+						<p:column headerText="Debiteur">
+							<h:outputText value="#{transaction.compteDebiteur}" />
+						</p:column>
+						<p:column headerText="Crediteur">
+							<h:outputText value="#{transaction.compteCrediteur}" />
+						</p:column>
+						<p:column headerText="montant">
+							<h:outputText value="#{transaction.montant}" />
+						</p:column>
+						
+					</p:dataTable>
+				</h:form>
 			</body>
 		</ui:define>
 

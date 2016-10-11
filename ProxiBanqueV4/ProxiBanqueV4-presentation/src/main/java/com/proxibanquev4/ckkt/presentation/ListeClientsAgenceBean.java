@@ -55,4 +55,21 @@ public class ListeClientsAgenceBean implements Serializable {
 		this.clientService = clientService;
 	}
 
+	public List<Client> getListeClientsAgence() {
+		return listeClientsAgence;
+	}
+
+	public void setListeClientsAgence(List<Client> listeClientsAgence) {
+		this.listeClientsAgence = listeClientsAgence;
+	}
+
+	public MenuConseillerBean getMenuConseillerBean() {
+		return menuConseillerBean;
+	}
+
+	public void setMenuConseillerBean(MenuConseillerBean menuConseillerBean) {
+		this.menuConseillerBean = menuConseillerBean;
+	}
+	
+
 }

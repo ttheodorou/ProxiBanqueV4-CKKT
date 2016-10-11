@@ -29,7 +29,7 @@
 					action="#{navigateBean.redirectToListeClientsAgence}">
 					<f:param name="i" value="1" />
 				</p:menuitem>
-				<p:menuitem value="Historique" outcome="/0000G.xhtml">
+				<p:menuitem value="Historique" action="#{navigateBean.redirectToTransaction}">
 					<f:param name="i" value="2" />
 				</p:menuitem>
 				<p:menuitem value="Clients à découvert" outcome="/0000G.xhtml">
