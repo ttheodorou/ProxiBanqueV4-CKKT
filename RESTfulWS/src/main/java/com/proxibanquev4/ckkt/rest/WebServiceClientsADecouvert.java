@@ -7,7 +7,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -19,8 +18,8 @@ import com.proxibanquev4.ckkt.domaine.Client;
 import com.proxibanquev4.ckkt.domaine.CompteBancaire;
 import com.proxibanquev4.ckkt.domaine.Track;
 
-@Path("/json/metallica")
-public class JSONService {
+@Path("/clientsadecouvert")
+public class WebServiceClientsADecouvert {
 
 //	private ICompteBancaireDao springDaoCompte;
 	private IClientDao springDaoClient;
@@ -38,9 +37,9 @@ public class JSONService {
 	}
 	
 	@GET
-	@Path("/{param}")
+	@Path("/getall")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Long> getTrackInJSON(@PathParam("param") String msg) {
+	public List<Long> getTrackInJSON() {
 
 		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
 		springDaoClient = (IClientDao) appContext.getBean(IClientDao.class);
@@ -56,16 +55,6 @@ public class JSONService {
 		}
 		
 		return idsClientsADebit;
-
-	}
-
-	@POST
-	@Path("/post")
-	@Consumes(MediaType.APPLICATION_JSON)
-	public Response createTrackInJSON(Track track) {
-
-		String result = "Track saved : " + track;
-		return Response.status(201).entity(result).build();
 
 	}
 

@@ -15,8 +15,7 @@ public class ClientWS {
 
 			com.sun.jersey.api.client.Client client = Client.create();
 
-			WebResource webResource = client
-					.resource("http://localhost:8080/RESTfulWS/rest/json/metallica/qqc");
+			WebResource webResource = client.resource("http://localhost:8080/RESTfulWS/rest/clientsadecouvert/getall");
 
 			ClientResponse response = webResource.accept("")
 					.get(ClientResponse.class);
