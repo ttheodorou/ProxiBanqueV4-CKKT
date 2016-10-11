@@ -1,5 +1,7 @@
 package com.proxibanquev4.ckkt.dao.test;
 
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Assume;
 import org.junit.Before;
@@ -59,10 +61,7 @@ public class TestSpringDAOClient extends TestCase {
 	
 	@Test
 	public void testReadClient() {
-		
-//		appContext = new ClassPathXmlApplicationContext("spring-data.xml");
-//		springDaoClient = (IClientDao) appContext.getBean(IClientDao.class);
-		
+				
 		long id = 0L;
 		
 		// Chercher le client avec l'id la plus petite.
@@ -70,6 +69,16 @@ public class TestSpringDAOClient extends TestCase {
 		
 		// Vérifier que le client n'est pas null
 		assertNotNull(springDaoClient.findOne(id));
+	}
+	
+	@Test
+	public void testLireTousClients() {
+		try {
+			//List<Client> tousClients = springDaoClient.findAll();
+			assertNotNull(springDaoClient.findAll());
+		} catch (Exception e) {
+			Assume.assumeNoException(e);
+		}
 	}
 }
 
