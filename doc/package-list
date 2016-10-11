@@ -1,0 +1,9 @@
+com.proxibanquev4.ckkt.client
+com.proxibanquev4.ckkt.dao
+com.proxibanquev4.ckkt.dao.test
+com.proxibanquev4.ckkt.domaine
+com.proxibanquev4.ckkt.presentation
+com.proxibanquev4.ckkt.rest
+com.proxibanquev4.ckkt.service
+com.proxibanquev4.ckkt.serviceTest
+org.ckkt
