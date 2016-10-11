@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 
 import com.proxibanquev4.ckkt.dao.IClientDao;
 import com.proxibanquev4.ckkt.domaine.Client;
+import com.proxibanquev4.ckkt.domaine.Conseiller;
+import com.proxibanquev4.ckkt.domaine.User;
 
 //@ManagedBean(name = "clientService")
 //@ApplicationScoped
@@ -28,6 +30,14 @@ public class ClientService {
 	}
 	
 	public List<Client> lireTousClients(long idConseiller) {
+		return dao.findAll();
+	}
+	
+	public List<Client> lireTousClientsByConseiller(Conseiller conseiller) {
+		return dao.findByConseiller(conseiller);
+	}
+	
+	public List<Client> lireTousClientsAgence() {
 		return dao.findAll();
 	}
 	

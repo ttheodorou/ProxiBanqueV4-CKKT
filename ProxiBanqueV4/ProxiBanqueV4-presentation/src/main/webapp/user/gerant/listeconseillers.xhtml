@@ -17,45 +17,31 @@
 		<!-- Redefinition de la zone 'content' du layout  	-->
 		<ui:define name="content">
 			<body>
-				<h3>Liste des conseillers</h3>
-				<p:dataTable var="client" value="#{clientbean.clients}">
-					<p:column headerText="Id">
-						<h:outputText value="#{client.id}">
-							<f:convertNumber />
-						</h:outputText>
-					</p:column>
-					<p:column headerText="Nom">
-						<h:outputText value="#{client.nom}" />
-					</p:column>
-					<p:column headerText="Prenom">
-						<h:outputText value="#{client.prenom}" />
-					</p:column>
-					<p:column headerText="Login">
-						<h:outputText value="#{client.adresse}" />
-					</p:column>
-					<p:column headerText="Password">
-						<h:outputText value="#{client.email}" />
-					</p:column>
-				</p:dataTable>
-				<h3>Creation conseiller</h3>
-				<h:form id="CreationConseiller">
-					<h:panelGrid columns="2" cellpadding="2">
-						<h:outputLabel for="#{clientbean.nom}" value="Nom" />
-						<h:inputText value="#{clientbean.nom}" label="Nom" required="true" />
-						<h:outputLabel for="#{clientbean.prenom}" value="Prenom" />
-						<h:inputText value="#{clientbean.prenom}" label="Prenom"
-							required="true" />
-						<h:outputLabel for="#{clientbean.adresse}" value="Login" />
-						<h:inputText value="#{clientbean.adresse}" label="Login"
-							required="true" />
-						<h:outputLabel for="#{clientbean.email}" value="Password" />
-						<h:inputText value="#{clientbean.email}" label="Password"
-							required="true" />
-					</h:panelGrid>
-					<h:commandButton type="submit" value="Creation"
-						action="#{clientbean.update}">
-						<f:param name="i" value="1" />
-					</h:commandButton>
+				<h3>Liste des conseillers de l'agence</h3>
+				<h:form>
+					<p:commandButton value="Rafraichir la page" id="rafraichir"
+						action="#{listeConseillersAgenceBean.refresh()}" update="conseiller"
+						styleClass="ui-priority-primary" />
+
+					<p:dataTable id="conseiller" var="conseiller"
+						value="#{listeClientsAgenceBean.listeConseillersAgence}">
+						<p:column headerText="Id">
+							<h:outputText value="#{conseiller.idPersonne}">
+								<f:convertNumber />
+							</h:outputText>
+						</p:column>
+						<p:column headerText="Nom">
+							<h:outputText value="#{conseiller.nom}" />
+						</p:column>
+						<p:column headerText="Prenom">
+							<h:outputText value="#{conseiller.prenom}" />
+						</p:column>
+						</p:column>
+						<p:column headerText="Login">
+							<h:outputText value="#{conseiller.login}" />
+						</p:column>
+
+					</p:dataTable>
 				</h:form>
 			</body>
 		</ui:define>

@@ -20,7 +20,7 @@
 				<h3>Liste des clients de l'agence</h3>
 				<h:form>
 					<p:commandButton value="Rafraichir la page" id="rafraichir"
-						action="#{listeClientsBean.refresh()}" update="client"
+						action="#{listeClientsAgenceBean.refresh()}" update="client"
 						styleClass="ui-priority-primary" />
 
 					<p:dataTable id="client" var="client"

@@ -22,7 +22,7 @@
 		<H1 align="left">Interface gérant</H1>
 		<h:form id="form">
 			<p:tabMenu activeIndex="#{param.i}">
-				<p:menuitem value="Liste Conseillers" outcome="/0000G.xhtml">
+				<p:menuitem value="Liste Conseillers" action="#{navigateBean.redirectToListeConseillersAgence}">
 					<f:param name="i" value="0" />
 				</p:menuitem>
 				<p:menuitem value="Liste clients agence"

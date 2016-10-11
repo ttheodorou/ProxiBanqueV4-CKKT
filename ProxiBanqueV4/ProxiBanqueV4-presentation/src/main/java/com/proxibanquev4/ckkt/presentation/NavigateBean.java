@@ -60,6 +60,24 @@ public class NavigateBean implements Serializable {
 	}
 	
 	/**
+	 * Permet de rediriger vers la page des comptes des clients du conseiller
+	 *
+	 * @return l'adresse de la page menuconseiller
+	 */
+	public String redirectToListeComptes() {
+		return "/user/conseiller/listecomptes.xhtml?faces-redirect=true";
+	}
+
+	/**
+	 * Permet de naviguer vers la page des comptes des clients du conseiller
+	 *
+	 * @return l'adresse relative de la page menuconseiller
+	 */
+	public String toListeComptes() {
+		return "/user/conseiller/listecomptes.xhtml";
+	}
+	
+	/**
 	 * Permet de rediriger vers la page des clients du conseiller
 	 *
 	 * @return l'adresse de la page menuconseiller
@@ -111,6 +129,24 @@ public class NavigateBean implements Serializable {
 	 */
 	public String toListeClientsAgence() {
 		return "/user/gerant/listeclientsagence.xhtml";
+	}
+	
+	/**
+	 * Permet de rediriger vers la page des conseillers de l'agence
+	 *
+	 * @return l'adresse de la page menuconseiller
+	 */
+	public String redirectToListeConseillersAgence() {
+		return "/user/gerant/listeconseillers.xhtml?faces-redirect=true";
+	}
+
+	/**
+	 * Permet de naviguer vers la page des conseillers de l'agence
+	 *
+	 * @return l'adresse relative de la page menuconseiller
+	 */
+	public String toListeConseillersAgence() {
+		return "/user/gerant/listeconseillers.xhtml";
 	}
 	
 	/**

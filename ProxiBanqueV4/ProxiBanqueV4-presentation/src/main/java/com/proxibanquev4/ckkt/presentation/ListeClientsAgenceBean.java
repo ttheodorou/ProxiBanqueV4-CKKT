@@ -26,27 +26,16 @@ public class ListeClientsAgenceBean implements Serializable {
 	@Inject
 	private ClientService clientService;
 
-	@Inject
-	MenuConseillerBean menuConseillerBean;
-
 	@PostConstruct
 	public void init() {
-
+		listeClientsAgence = (ArrayList<Client>) clientService.lireTousClientsAgence();
 	}
 
 	public void refresh() {
-		listeClientsAgence = (ArrayList<Client>) clientService
-				.lireTousClients(menuConseillerBean.conseiller.getIdPersonne());
+		listeClientsAgence = (ArrayList<Client>) clientService.lireTousClientsAgence();
 	}
 
-	public List<Client> getListeClients() {
-		return listeClientsAgence;
-	}
-
-	public void setListeClients(List<Client> listeClients) {
-		this.listeClientsAgence = listeClients;
-	}
-
+	
 	public ClientService getClientService() {
 		return clientService;
 	}
@@ -62,14 +51,4 @@ public class ListeClientsAgenceBean implements Serializable {
 	public void setListeClientsAgence(List<Client> listeClientsAgence) {
 		this.listeClientsAgence = listeClientsAgence;
 	}
-
-	public MenuConseillerBean getMenuConseillerBean() {
-		return menuConseillerBean;
-	}
-
-	public void setMenuConseillerBean(MenuConseillerBean menuConseillerBean) {
-		this.menuConseillerBean = menuConseillerBean;
-	}
-	
-
 }
