@@ -11,6 +11,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 
+import com.proxibanquev4.ckkt.domaine.Client;
 import com.proxibanquev4.ckkt.domaine.Conseiller;
 
 @ManagedBean(name = "menuConseillerBean")
@@ -46,8 +47,10 @@ public class MenuConseillerBean implements Serializable {
 		ListeClientsAgenceBean listeClientsAgenceBean = context.getBean(ListeClientsAgenceBean.class);
 		VirementBean virementBean = context.getBean(VirementBean.class);
 		HistoriqueTransactionBean historiqueTransactionBean = context.getBean(HistoriqueTransactionBean.class);
+		EditionClientBean editionClientBean = context.getBean(EditionClientBean.class);
+		
 
-		return "/user/conseiller/testlogin.xhtml";
+		return "/user/conseiller/listeclients.xhtml";
 	}
 
 	public MenuConseillerBean() {

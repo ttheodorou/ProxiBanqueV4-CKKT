@@ -9,6 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
+import org.springframework.stereotype.Component;
+
 /**
  * Classe Client.java hérite de Personne et Represente les Clients de la banque ProxiBanque
  * @author CKKT

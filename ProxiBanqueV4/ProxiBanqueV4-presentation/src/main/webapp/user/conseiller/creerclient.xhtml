@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<f:view>
+	<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+<title>Edition Client</title>
+	</head>
+
+	<h:body>
+		<!-- DECLARATION DU TEMPLATE DONT LA PAGE EST CLIENTE -->
+		<ui:composition template="/template/layoutC.xhtml">
+
+			<!-- Redefinition de la zone 'content' du layout  	-->
+			<ui:define name="content">
+
+				<h:form>
+
+					<h:body>
+
+						<h:form id="page">
+							<!-- 							<p:growl id="msgs" showDetail="true" /> -->
+
+							<p:panel id="interfaceCreation" header="Création d'un client"
+								style="margin-bottom:10px;">
+								<h:panelGrid columns="2" cellpadding="5">
+
+									<p:commandButton value="Rafraichir la page" id="rafraichir"
+										action="#{creerClientBean.refresh()}" update="clientACreer"
+										styleClass="ui-priority-primary" />
+
+
+									<p:panel id="clientACreer" header="Entrer un client à créer"
+										style="margin-bottom:10px;">
+										<h:panelGrid columns="2" cellpadding="5">
+
+											<h:outputLabel for="#{creerClientBean.clientToCreate.nom}" value="Nom" />
+											<h:inputText value="#{creerClientBean.clientToCreate.nom}" label="Nom"
+												required="true" />
+											<h:outputLabel for="#{creerClientBean.clientToCreate.prenom}" value="Prénom" />
+											<h:inputText value="#{creerClientBean.clientToCreate.prenom}" label="Prenom"
+												required="true" />
+											<h:outputLabel for="#{creerClientBean.clientToCreate.telephone}" value="Téléphone" />
+											<h:inputText value="#{creerClientBean.clientToCreate.telephone}" label="Téléphone"
+												required="true" />
+											<h:outputLabel for="#{creerClientBean.clientToCreate.mail}" value="Email" />
+											<h:inputText value="#{creerClientBean.clientToCreate.mail}" label="Email"
+												required="true" />
+											<h:outputLabel for="#{creerClientBean.clientToCreate.adresse.numRue}"
+												value="numéro de la rue" />
+											<h:inputText value="#{creerClientBean.clientToCreate.adresse.numRue}" label="numRue"
+												required="true" />
+											<h:outputLabel for="#{creerClientBean.clientToCreate.adresse.nomRue}"
+												value="nom de la rue" />
+											<h:inputText value="#{creerClientBean.clientToCreate.adresse.nomRue}" label="nomRue"
+												required="true" />
+											<h:outputLabel for="#{creerClientBean.clientToCreate.adresse.codePostal}"
+												value="code postal" />
+											<h:inputText value="#{creerClientBean.clientToCreate.adresse.codePostal}"
+												label="codePostal" required="true" />
+											<h:outputLabel for="#{creerClientBean.clientToCreate.adresse.ville}" value="ville" />
+											<h:inputText value="#{creerClientBean.clientToCreate.adresse.ville}" label="ville"
+												required="true" />
+
+										</h:panelGrid>
+									</p:panel>
+									<p:commandButton value="OK" id="renvoiLaBalle"
+										action="#{creerClientBean.validationCreation()}"
+										styleClass="ui-priority-primary" />
+								</h:panelGrid>
+
+
+							</p:panel>
+
+
+						</h:form>
+					</h:body>
+				</h:form>
+			</ui:define>
+
+		</ui:composition>
+	</h:body>
+</f:view>
+</html>
+
+

@@ -78,6 +78,24 @@ public class NavigateBean implements Serializable {
 	}
 	
 	/**
+	 * Permet de rediriger vers la page de création clients du conseiller
+	 *
+	 * @return l'adresse de la page menuconseiller
+	 */
+	public String redirectToCreationClients() {
+		return "/user/conseiller/creerclient.xhtml?faces-redirect=true";
+	}
+
+	/**
+	 * Permet de naviguer vers la page de création des clients du conseiller
+	 *
+	 * @return l'adresse relative de la page menuconseiller
+	 */
+	public String toCreationClients() {
+		return "/user/conseiller/creerclient.xhtml";
+	}
+	
+	/**
 	 * Permet de rediriger vers la page d'édition des clients de l'agence
 	 *
 	 * @return l'adresse de la page menuconseiller

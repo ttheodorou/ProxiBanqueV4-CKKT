@@ -7,18 +7,23 @@ import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 /**
  * Classe Personne.java : Represente des personnes de ProxiBanque.
  * @author CKKT
  */
 @Entity
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+
 public abstract class Personne {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.TABLE)
 	private long idPersonne;
 	
+
 	private String nom;
 	private String prenom;
 	

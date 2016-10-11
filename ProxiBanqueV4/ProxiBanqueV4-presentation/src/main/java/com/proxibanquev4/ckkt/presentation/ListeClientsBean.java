@@ -11,6 +11,9 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Component;
 
 import com.proxibanquev4.ckkt.domaine.Client;
+import com.proxibanquev4.ckkt.domaine.Conseiller;
+import com.proxibanquev4.ckkt.service.ClientService;
+import com.proxibanquev4.ckkt.service.ConseillerService;
 
 @ManagedBean(name = "listeClientsBean")
 @ViewScoped
@@ -26,6 +29,11 @@ public class ListeClientsBean implements Serializable {
 
 	@Inject
 	MenuConseillerBean menuConseillerBean;
+	
+	@Inject
+	ConseillerService conseillerService;
+	@Inject
+	ClientService clientService;
 
 	@PostConstruct
 	public void init() {
@@ -33,7 +41,11 @@ public class ListeClientsBean implements Serializable {
 	}
 
 	public void refresh() {
-		listeClients = menuConseillerBean.conseiller.getClients();
+		long idPersonne = menuConseillerBean.conseiller.getIdPersonne();
+		Conseiller conseiller = conseillerService.lireConseiller(idPersonne);
+//		listeClients = clientService.lireTousClientsByConseiller(conseiller);
+//		listeClients = clientService.lireTousClients(idPersonne);
+		listeClients = conseiller.getClients();
 	}
 
 	public List<Client> getListeClients() {

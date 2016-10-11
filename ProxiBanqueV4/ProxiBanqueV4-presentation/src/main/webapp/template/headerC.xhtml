@@ -30,12 +30,15 @@
 				<p:menuitem value="Edition Clients" action="#{navigateBean.redirectToEditionClients}">
 					<f:param name="i" value="1" />
 				</p:menuitem>
-				<p:menuitem value="Liste Comptes Clients" outcome="/0000C.xhtml">
+				<p:menuitem value="Création Clients" action="#{navigateBean.redirectToCreationClients}">
 					<f:param name="i" value="2" />
+				</p:menuitem>
+				<p:menuitem value="Liste Comptes Clients" outcome="/0000C.xhtml">
+					<f:param name="i" value="3" />
 				</p:menuitem>
 				<p:menuitem value="Virement"
 					action="#{navigateBean.redirectToVirement}">
-					<f:param name="i" value="3" />
+					<f:param name="i" value="4" />
 				</p:menuitem>
 			</p:tabMenu>
 		</h:form>
