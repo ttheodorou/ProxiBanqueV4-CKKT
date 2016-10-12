@@ -17,12 +17,13 @@
 		<!-- Redefinition de la zone 'content' du layout  	-->
 		<ui:define name="content">
 			<body>
+			<h:form>
 				<h3>Liste de vos clients</h3>
 				<h:form>
 					<p:commandButton value="Rafraichir la page" id="rafraichir"
 						action="#{listeClientsBean.refresh()}" update="client"
 						styleClass="ui-priority-primary" />
-						
+	
 					<p:dataTable id="client" var="client"
 						value="#{listeClientsBean.listeClients}">
 						
@@ -44,6 +45,7 @@
 							<h:outputText value="#{client.mail}" />
 						</p:column>
 					</p:dataTable>
+				</h:form>
 				</h:form>
 			</body>
 		</ui:define>
